@@ -819,7 +819,7 @@ export default defineComponent({
   width: 100vw;
   height: 92vh;
   // border: 1px solid black;
-  background-image: url(../src/picture/CreateBackground.png);
+  background-image: url(../picture/CreateBackground.png);
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden; //隱藏水平滾動條.
@@ -965,7 +965,7 @@ export default defineComponent({
   height: 170vh;
   
   // margin-top: 50px;
-  background-image: url(../src/picture/bordImage.jpg);
+  background-image: url(../picture/bordImage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -983,7 +983,7 @@ export default defineComponent({
   width: 100vw;
   height: 130vh;
   // border: 1px solid black;
-  background-image: url(../src/picture/bordImage.jpg);
+  background-image: url(../picture/bordImage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -995,7 +995,7 @@ export default defineComponent({
     margin-left: 21%;
     margin-top: 3.5%;
     // border: 1px solid black;
-  background-image: url(../src/picture/12345603.png);
+  background-image: url(../picture/12345603.png);
   background-repeat: no-repeat;
   background-size: contain;
 
@@ -1212,13 +1212,13 @@ span {
 // 待修改，將輸入進來的電影種類改成中文
 
 .lell{
-  background-image: url(../src/picture/020202.png);
+  background-image: url(../picture/020202.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 
 .rerr{
-  background-image: url(../src/picture/566.png);
+  background-image: url(../picture/566.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
