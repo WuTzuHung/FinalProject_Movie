@@ -42,7 +42,7 @@
 
 以上のように、技術の自己学習を通じて、キャンバス描画領域を絵を描くだけでなく、作品を保存し、最後にデータベースに保存された画像をウェブページに表示することに成功しました。これらの機能は、ユーザーが作品を制作する楽しみや、他の人の作品を見るソーシャルインタラクションを追加し、映画チケット購入ウェブサイトを新しい方法で楽しませ、ユーザーがプラットフォームを利用し続ける粘着性を高めました。
 
-![螢幕擷取畫面 2024-01-31 173036](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/fab78baf-32df-49d9-be57-5f8db505ba01)
+![螢幕擷取畫面 2024-03-26 120127](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/b042a6cc-1a4f-444a-b104-e9b303f5dd05)
 
 ![螢幕擷取畫面 2024-01-31 173449](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/9fdb327f-5031-4bc8-a576-b20a9a9b3a87)
 
