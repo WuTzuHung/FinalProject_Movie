@@ -48,8 +48,9 @@
 
 ![螢幕擷取畫面 2024-01-31 173259](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/9b8c9ce4-4dbc-4bf7-a8f3-ae033942f650)
 
-![螢幕擷取畫面 2024-01-29 001702](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/9216512c-d311-4e6b-86c5-385cb0b3e24d)
-
 ![螢幕擷取畫面 2024-01-31 173331](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/1a9278e4-1c06-4aec-b5ca-11dc9605896c)
 
 ![螢幕擷取畫面 2024-01-31 174856](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/f17ed392-d4ed-4925-975b-3921b5f48154)
+
+![螢幕擷取畫面 2024-03-26 115517](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/51cf79f0-b9f3-4202-8912-7290091a07ab)
+
