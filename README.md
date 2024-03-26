@@ -53,4 +53,3 @@
 ![螢幕擷取畫面 2024-01-31 174856](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/f17ed392-d4ed-4925-975b-3921b5f48154)
 
 ![螢幕擷取畫面 2024-03-26 115517](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/51cf79f0-b9f3-4202-8912-7290091a07ab)
-
