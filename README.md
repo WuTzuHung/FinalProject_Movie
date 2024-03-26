@@ -41,3 +41,15 @@
 描いた画像をbase64情報に変換し、MySQLに保存しました。次に、特定の映画の展示ボタンをクリックすると、Naive UIのカルーセルエリアで、選択した映画の作品が表示されます。作品の保存と表示ボタンは、バックエンドのJavaとの統合されており、各ユーザーのアカウント、選択した映画、作品情報をデータベースに保存します。
 
 以上のように、技術の自己学習を通じて、キャンバス描画領域を絵を描くだけでなく、作品を保存し、最後にデータベースに保存された画像をウェブページに表示することに成功しました。これらの機能は、ユーザーが作品を制作する楽しみや、他の人の作品を見るソーシャルインタラクションを追加し、映画チケット購入ウェブサイトを新しい方法で楽しませ、ユーザーがプラットフォームを利用し続ける粘着性を高めました。
+
+![螢幕擷取畫面 2024-01-31 173036](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/fab78baf-32df-49d9-be57-5f8db505ba01)
+
+![螢幕擷取畫面 2024-01-31 173449](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/9fdb327f-5031-4bc8-a576-b20a9a9b3a87)
+
+![螢幕擷取畫面 2024-01-31 173259](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/9b8c9ce4-4dbc-4bf7-a8f3-ae033942f650)
+
+![螢幕擷取畫面 2024-01-29 001702](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/9216512c-d311-4e6b-86c5-385cb0b3e24d)
+
+![螢幕擷取畫面 2024-01-31 173331](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/1a9278e4-1c06-4aec-b5ca-11dc9605896c)
+
+![螢幕擷取畫面 2024-01-31 174856](https://github.com/WuTzuHung/FinalProject_Movie/assets/151004287/f17ed392-d4ed-4925-975b-3921b5f48154)
