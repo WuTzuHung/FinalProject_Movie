@@ -41,7 +41,7 @@ export default {
         localStorage.setItem("setpas",this.password)
       }
       if(this.account !="" && this.password !=""){
-        fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/login', {
+        fetch('https://hnd1.clusters.zeabur.com:31312/movie/user/login', {
             method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
             headers: {
                 'Content-Type': 'application/json'
@@ -103,7 +103,7 @@ export default {
         this.$router.push("/register")
     },
     forgetpwd(){
-        fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/forgetpwd', {
+        fetch('https://hnd1.clusters.zeabur.com:31312/movie/user/forgetpwd', {
             method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
             headers: {
                 'Content-Type': 'application/json'
@@ -129,7 +129,7 @@ export default {
         });
     },
     verifyway(){
-      fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/verifypwdAccount', {
+      fetch('https://hnd1.clusters.zeabur.com:31312/movie/user/verifypwdAccount', {
             method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
             headers: {
                 'Content-Type': 'application/json'
