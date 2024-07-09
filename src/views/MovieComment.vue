@@ -162,7 +162,7 @@ export default {
     // 展示區相關
     async searchPicture() {
       try {
-        const response = await fetch("http://hnd1.clusters.zeabur.com:31312/movie/art/search", {
+        const response = await fetch("https://spintbootmovie.zeabur.app/movie/art/search", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -262,7 +262,7 @@ export default {
       // 更新 like 數量
       comment.favorite += likeChange;
 
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/likeAndDislike", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/likeAndDislike", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -292,7 +292,7 @@ export default {
       const dislikeChange = comment.isDisLiked ? -1 : 1;
       comment.dislike += dislikeChange;
 
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/likeAndDislike", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/likeAndDislike", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -326,7 +326,7 @@ export default {
       this.commentIndexOrder = indexOrder;
       comment.commentText = comment.editingText;
       comment.editing = false;
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/update", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/update", {
         method: "POST", // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           "Content-Type": "application/json",
@@ -357,7 +357,7 @@ export default {
     },
     // 後端api
     commentCreate() { // 留言
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/create", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/create", {
         method: "POST", // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           "Content-Type": "application/json",
@@ -393,7 +393,7 @@ export default {
         });
     },
     commentSearch() { // 抓此電影所有留言
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/search", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/search", {
         method: "POST", // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           "Content-Type": "application/json",
@@ -421,7 +421,7 @@ export default {
         });
     },
     commentCreateChild() { // 回覆留言
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/createchild", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/createchild", {
         method: "POST", // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           "Content-Type": "application/json",
@@ -449,7 +449,7 @@ export default {
       if (index11 !== -1) {
         this.comments.splice(index11, 1);
       }
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/deleteF", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/deleteF", {
         method: "POST", // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           "Content-Type": "application/json",
@@ -475,7 +475,7 @@ export default {
       if (index11 !== -1) {
         this.commentReplies.splice(index11, 1);
       }
-      fetch("http://hnd1.clusters.zeabur.com:31312/movie/comment/deleteC", {
+      fetch("https://spintbootmovie.zeabur.app/movie/comment/deleteC", {
         method: "POST", // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           "Content-Type": "application/json",
@@ -499,7 +499,7 @@ export default {
       const movie = this.movieInfo.movieTitle;
       const movieName = selectedCinema;
       axios({
-        url: 'http://hnd1.clusters.zeabur.com:31312/movie/movieinfo/search',
+        url: 'https://spintbootmovie.zeabur.app/movie/movieinfo/search',
         method: 'POST',
         headers: {
           "Content-Type": "application/json"

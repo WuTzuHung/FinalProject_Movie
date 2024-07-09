@@ -262,7 +262,7 @@ export default {
     this.$router.push("/mypageB")
   },
   getrandonpage(){
-    fetch('http://hnd1.clusters.zeabur.com:31312/movie/mypage/searchA', {
+    fetch('https://spintbootmovie.zeabur.app/movie/mypage/searchA', {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'
@@ -292,7 +292,7 @@ export default {
   searchmypageaccount(){
     
     console.log(this.account)
-    fetch('http://hnd1.clusters.zeabur.com:31312/movie/mypage/search'+ '?' + "account=" + this.searchaccount, {
+    fetch('https://spintbootmovie.zeabur.app/movie/mypage/search'+ '?' + "account=" + this.searchaccount, {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'
@@ -354,7 +354,7 @@ export default {
   },
   logaccount(x){
     console.log(x)
-    fetch('http://hnd1.clusters.zeabur.com:31312/movie/mypage/search'+ '?' + "account=" + x, {
+    fetch('https://spintbootmovie.zeabur.app/movie/mypage/search'+ '?' + "account=" + x, {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'

@@ -30,7 +30,7 @@ export default {
   methods:{
     register(){
       if(this.account != "" && this.password == this.password2 && this.account != this.password && this.email .toString().length > 6 && this.phone.toString().length == 10 && this.name !=""){
-          fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/search', {
+          fetch('https://spintbootmovie.zeabur.app/movie/user/search', {
           method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
           headers: {
               'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ export default {
           console.log(data)
           console.log(data.code)
           if(data.code = 200){
-            fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/create', {
+            fetch('https://spintbootmovie.zeabur.app/movie/user/create', {
               method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
               headers: {
                   'Content-Type': 'application/json'
@@ -121,7 +121,7 @@ export default {
         this.$router.push("/login")
     },
     verifyway(){
-      fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/verifyAccount', {
+      fetch('https://spintbootmovie.zeabur.app/movie/user/verifyAccount', {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'

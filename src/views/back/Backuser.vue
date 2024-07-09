@@ -105,7 +105,7 @@ export default {
             this.loginAccount = Cookies.get('account')
             
             if(this.loginAccount != ""){
-                fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/loginCheck', {
+                fetch('https://spintbootmovie.zeabur.app/movie/user/loginCheck', {
                     method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
                     headers: {
                         'Content-Type': 'application/json'
@@ -139,7 +139,7 @@ export default {
             } 
         },
     updateComfirmInfo(){
-      fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/update', {
+      fetch('https://spintbootmovie.zeabur.app/movie/user/update', {
                     method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
                     headers: {
                         'Content-Type': 'application/json'
@@ -169,7 +169,7 @@ export default {
                 });
     },
     updateComfirmpassword(){
-      fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/updatepwd', {
+      fetch('https://spintbootmovie.zeabur.app/movie/user/updatepwd', {
                     method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
                     headers: {
                         'Content-Type': 'application/json'
@@ -196,7 +196,7 @@ export default {
                 });
     },
     gotomyticket(){
-      fetch('http://hnd1.clusters.zeabur.com:31312/movie/buyinfo/search', {
+      fetch('https://spintbootmovie.zeabur.app/movie/buyinfo/search', {
                     method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
                     headers: {
                         'Content-Type': 'application/json'
@@ -230,7 +230,7 @@ export default {
     },
     deleteticket(index){
       console.log(index)
-      fetch('http://hnd1.clusters.zeabur.com:31312/movie/buyinfo/delete', {
+      fetch('https://spintbootmovie.zeabur.app/movie/buyinfo/delete', {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'
@@ -261,7 +261,7 @@ export default {
     },
     paycheck(index){
       console.log(index)
-      fetch('http://hnd1.clusters.zeabur.com:31312/movie/buyinfo/paycheck', {
+      fetch('https://spintbootmovie.zeabur.app/movie/buyinfo/paycheck', {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'
@@ -289,7 +289,7 @@ export default {
     //   console.log(Cookies.get('account'))
     //   this.loginAccount = Cookies.get('account')
     //   if(this.loginAccount != ""){
-    //     fetch('http://hnd1.clusters.zeabur.com:31312/movie/user/loginCheck', {
+    //     fetch('https://spintbootmovie.zeabur.app/movie/user/loginCheck', {
     //         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
     //         headers: {
     //         'Content-Type': 'application/json'
