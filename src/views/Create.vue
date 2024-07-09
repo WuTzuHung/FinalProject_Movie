@@ -239,7 +239,7 @@ export default defineComponent({
 
       console.log(this.selectedMovie)
 
-      fetch('http://localhost:8080/movie/art/create', {
+      fetch('http://hnd1.clusters.zeabur.com:31312/movie/art/create', {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'
@@ -584,7 +584,7 @@ export default defineComponent({
       
       this.selectedMovie = movie;
 
-      fetch('http://localhost:8080/movie/art/search', {
+      fetch('http://hnd1.clusters.zeabur.com:31312/movie/art/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

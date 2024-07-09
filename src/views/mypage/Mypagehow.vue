@@ -227,7 +227,7 @@ export default {
     favoritComment: this.commentText,
     };
 
-    fetch('http://localhost:8080/movie/mypage/create', {
+    fetch('http://hnd1.clusters.zeabur.com:31312/movie/mypage/create', {
         method: 'POST', // 這裡使用POST方法，因為後端是@PostMapping
         headers: {
           'Content-Type': 'application/json'
