@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://azure-fantasy-movies.zeabur.app/sitemap.xml
