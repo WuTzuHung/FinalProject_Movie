@@ -645,23 +645,15 @@ export default defineComponent({
 <template lang="">
 <!-- Search First -->
       <div class="First" v-if="searchMode === 'original'">
-        <!-- <select v-model="selectedGenre" @change="enterGenreArea" class="selectionBoxGenres">
-          <option value="">All genres</option>  -->
-          <!-- <option v-for="genre in movieGenres" :key="genre.id" :value="genre">{{ genre.name }}</option>
-        </select> -->
-        <div class="" style="background-color:#525f75; width:35%; height:50%; margin-top:170px; margin-left:33%; border-radius:20px;">
-          <h1 style="position:absolute; left:40.8%; top:40%; color:white;">{{ "您的身分為: " + pageTitle }}</h1>
-        <div class="form-floating mb-3" style="position:absolute; left:37.5%; top:41.5%;">
-          <input type="text" class="form-control tb" id="floatingInput" placeholder="name@example.com" v-model="searchText"style="margin-top:70px;font-size: 20px;" >
+        <div class="blueBack" style=" display:flex; flex-direction: column; align-items: center; background-color:#525f75; width:35%; height:50dvh; padding:5px; margin-top:23dvh; margin-left:33%; border-radius:20px;">
+          <h1 style=" margin-top:9dvh; color:white;">{{ "您的身分為: " + pageTitle }}</h1>
+        <div class="form-floating mb-3" style="width:100%;">
+          <input type="text" class="form-control tb" id="floatingInput" placeholder="name@example.com" v-model="searchText"style="" >
           <label class="tbc" for="floatingInput" v-if="!searchText.trim()">搜尋電影...</label>
-          <!-- <label class="tbc" for="floatingInput" v-else-if="noResultsModal">無相關電影</label> -->
+          <button @click="getPlayMovie()" class="btn btn-primary" style="margin-left:2.5%; margin-top:4dvh; margin-bottom:0dvh; min-width:20%; height:7dvh; font-size: 1.5rem; background-color: #7e8eab;   border: #7e8eab;" >進入區域</button>
         </div>
-        <!-- <input class="searchMovie1" type="text" v-model="searchText"  placeholder="搜尋電影..."> -->
-        <button @click="getPlayMovie()" class="btn btn-primary allbuttonshoulduseit2" style="margin-left:2.5%; margin-top:40%; height:50px" >進入區域</button>
+        
       </div>
-        <!-- 提示信息 -->
-  <!-- <p v-if="!searchText.trim()">請輸入搜索條件</p> //修改1 整合功能510行
-  <p v-else-if="noResultsModal">無相關電影</p> -->
   </div>
 
   <!-- Search First Result -->
@@ -816,8 +808,8 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .First {
-  width: 100vw;
-  height: 92vh;
+  width: 100%;
+  height: 92dvh;
   // border: 1px solid black;
   background-image: url(../picture/CreateBackground.png);
   background-repeat: no-repeat;
@@ -1169,16 +1161,15 @@ span {
 }
 
 .tb {
-  width: 350px;
-  height: 20px;
-  margin-left: 8%;
-  // margin: 0 auto;
-  // margin-top: 5%;
+  width: 60%;
+  height: 5dvh;
+  margin-left: 20%;
+  margin-top: 7dvh;
 }
 
 .tbc {
-  margin-left: 8%;
-  margin-top: 20%;
+  margin-left: 20%;
+  margin-top: 7dvh;
 }
 
 .allbuttonshoulduseit {
@@ -1187,16 +1178,6 @@ span {
   height: 100%;
   font-size: 1.5em;
   margin-right: 28px;
-  margin-bottom: 20px;
-  background-color: #7e8eab;
-  border: #7e8eab;
-}
-
-.allbuttonshoulduseit2 {
-  width: 20%;
-  height: 10%;
-  font-size: 1.5em;
-  // margin-right: 28px;
   margin-bottom: 20px;
   background-color: #7e8eab;
   border: #7e8eab;
@@ -1221,5 +1202,15 @@ span {
   background-image: url(../picture/566.png);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@media (max-width: 767px) {
+  /* 針對手機設備的樣式 */
+  
+}
+
+@media (max-width: 1199px) {
+  /* 針對pc設備的樣式 */
+  
 }
 </style>
