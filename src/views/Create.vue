@@ -645,12 +645,12 @@ export default defineComponent({
 <template lang="">
 <!-- Search First -->
       <div class="First" v-if="searchMode === 'original'">
-        <div class="blueBack" style=" display:flex; flex-direction: column; align-items: center; background-color:#525f75; width:35%; height:50dvh; padding:5px; margin-top:23dvh; margin-left:33%; border-radius:20px;">
-          <h1 style=" margin-top:9dvh; color:white;">{{ "您的身分為: " + pageTitle }}</h1>
-        <div class="form-floating mb-3" style="width:100%;">
-          <input type="text" class="form-control tb" id="floatingInput" placeholder="name@example.com" v-model="searchText"style="" >
-          <label class="tbc" for="floatingInput" v-if="!searchText.trim()">搜尋電影...</label>
-          <button @click="getPlayMovie()" class="btn btn-primary" style="margin-left:2.5%; margin-top:4dvh; margin-bottom:0dvh; min-width:20%; height:7dvh; font-size: 1.5rem; background-color: #7e8eab;   border: #7e8eab;" >進入區域</button>
+        <div class="BlueBack">
+          <h1 class="BlueH1">{{ "您的身分為: " + pageTitle }}</h1>
+        <div class="form-floating mb-3 BlueForm">
+          <input type="text" class="form-control tb BlueText" id="floatingInput" placeholder="name@example.com" v-model="searchText" style="" >
+          <label class="BlueLabel" for="floatingInput" v-if="!searchText.trim()">搜尋電影...</label>
+          <button @click="getPlayMovie()" class="btn btn-primary BlueButton" >進入區域</button>
         </div>
         
       </div>
@@ -816,6 +816,39 @@ export default defineComponent({
   background-size: cover;
   overflow-x: hidden; //隱藏水平滾動條.
   overflow-y: hidden; //隱藏垂直滾動條.
+
+  .BlueBack{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    background-color:#525f75;
+    width:35%;
+    height:50dvh;
+    padding:5px;
+    margin-top:23dvh;
+    margin-left:33%;
+    border-radius:20px;
+
+    .BlueH1{
+      margin-top:9dvh; 
+      color:white;
+    }
+
+    .BlueForm{
+      width: 100%;
+
+      .BlueButton{
+        margin-left:2.5%; 
+        margin-top:4dvh; 
+        margin-bottom:0dvh; 
+        min-width:20%; 
+        height:7dvh; 
+        font-size: 1.5rem; 
+        background-color: #7e8eab;   
+        border: #7e8eab;
+      }
+    }
+  }
 
   .searchMovie1 {
     margin-top: 280px;
@@ -1167,7 +1200,7 @@ span {
   margin-top: 7dvh;
 }
 
-.tbc {
+.BlueLabel {
   margin-left: 20%;
   margin-top: 7dvh;
 }
@@ -1205,6 +1238,16 @@ span {
 }
 
 @media (max-width: 767px) {
+
+  .First{
+
+
+    .BlueBack{
+    width: 80%;
+    height: 45dvh;
+    margin-left:10%;
+  }
+  }
   /* 針對手機設備的樣式 */
   
 }

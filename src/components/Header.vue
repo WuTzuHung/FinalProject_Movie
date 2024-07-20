@@ -69,7 +69,7 @@ export default{
                 <p @click="logout1">登出</p>
             </div>
             <div v-if="(this.getAuth !== this.userLoggedIn) == false" class="a" style="">
-                <p @click="loga">登入</p>
+                <p style="margin: 0;" @click="loga">登入</p>
             </div>
         </div>
     </div>
@@ -78,22 +78,18 @@ export default{
 <style scoped lang="scss">
 
 .headerShow{
-    // overflow: scroll;
-    // display:flex
-    height: 100%;
-    width: 100%;
+    min-width: 100%;
+    height: 8dvh;
     .box{
         display:flex;
         text-align: center;
-        widows: 100%;
-        height: 100%;
+        justify-content: center;
+        min-width: 100%;
+        height: 8dvh;
         background-color: #525f75;
         .a{
-            margin-top: 10px;
             font-family: "jf-openhuninn-2.0";
-            height: 70%;
-            width: 450px;
-            line-height: 1em;
+            width: 20%;
             font-size: 2em;
             text-decoration: none;
             white-space:nowrap;
@@ -105,44 +101,23 @@ export default{
                 color:darkslategray;
                 transform:scale(1.1,1.1);
             }
-        }
-        .b{
-            margin-top: 10px;
-            font-family: "jf-openhuninn-2.0";
-            height: 70%;
-            width: 450px;
-            line-height: 1.4em;
-            font-size: 2em;
-            text-decoration: none;
-            white-space:nowrap;
-            transition: 0.4s;
-            color: whitesmoke;
-            border-radius: 5px;
-            &:hover{
-                background-color: gainsboro;
-                color:darkslategray;
-                transform:scale(1.1,1.1);
-            }
-        }
-        .c{
-            margin-top: 0px;
-            font-family: "jf-openhuninn-2.0";
-            line-height: 1.6em;
-            font-size: 1.4em;
-            text-decoration: none;
-            white-space:nowrap;
-            transition: 0.4s;
-            color: whitesmoke;
-            border-radius: 5px;
         }
     }
 }
 
-.cass{
-    background-color: rgb(125, 125, 255);
-    color: white;
-    border-radius: 5px;
-    transition: 0.6s;
+@media (max-width: 767px) {
+
+    .headerShow{
+
+    .box{
+
+        .a{
+            width: 35%;
+            font-size: 1em;
+            margin-top: 2dvh;
+        }
+    }
+}
 }
 
 </style>
