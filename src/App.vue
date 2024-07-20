@@ -20,7 +20,7 @@ import Header from './components/Header.vue';
   width: 100%;
   .header {
   height: 8dvh;
-  min-width: 100%;
+  width: 100%;
 }
   .content{
   width: 100%;

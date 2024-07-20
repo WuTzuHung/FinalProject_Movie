@@ -83,13 +83,15 @@ export default{
     .box{
         display:flex;
         text-align: center;
-        justify-content: center;
+        justify-content: space-between;
         min-width: 100%;
         height: 8dvh;
         background-color: #525f75;
         .a{
             font-family: "jf-openhuninn-2.0";
             width: 20%;
+            margin-left: 3%;
+            margin-right: 3%;
             font-size: 2em;
             text-decoration: none;
             white-space:nowrap;
@@ -108,13 +110,22 @@ export default{
 @media (max-width: 767px) {
 
     .headerShow{
-
+        
     .box{
 
         .a{
-            width: 35%;
+            // width: 35%;
             font-size: 1em;
-            margin-top: 2dvh;
+            margin-top: 2.5dvh;
+            margin-bottom: 1.5dvh;
+            justify-content: space-between;
+            
+            &:hover{
+                background-color: gainsboro;
+                color:darkslategray;
+                // transform: none; /* 不使用缩放 */
+                text-align: center; /* 文字居中 */
+            }
         }
     }
 }
