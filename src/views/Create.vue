@@ -648,7 +648,7 @@ export default defineComponent({
         <div class="BlueBack">
           <h1 class="BlueH1">{{ "您的身分為: " + pageTitle }}</h1>
         <div class="form-floating mb-3 BlueForm">
-          <input type="text" class="form-control tb BlueText" id="floatingInput" placeholder="name@example.com" v-model="searchText" style="" >
+          <input type="text" class="form-control BlueText" id="floatingInput" placeholder="name@example.com" v-model="searchText" style="" >
           <label class="BlueLabel" for="floatingInput" v-if="!searchText.trim()">搜尋電影...</label>
           <button @click="getPlayMovie()" class="btn btn-primary BlueButton" >進入區域</button>
         </div>
@@ -810,23 +810,21 @@ export default defineComponent({
 .First {
   width: 100%;
   height: 92dvh;
-  // border: 1px solid black;
   background-image: url(../picture/CreateBackground.png);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow-x: hidden; //隱藏水平滾動條.
-  overflow-y: hidden; //隱藏垂直滾動條.
+  padding: 0.1px;
 
   .BlueBack{
     display:flex;
     flex-direction:column;
     align-items:center;
     background-color:#525f75;
-    width:35%;
+    width:28%;
     height:50dvh;
     padding:5px;
     margin-top:23dvh;
-    margin-left:33%;
+    margin-left:35%;
     border-radius:20px;
 
     .BlueH1{
@@ -837,13 +835,24 @@ export default defineComponent({
     .BlueForm{
       width: 100%;
 
+      .BlueText{
+      width: 60%;
+      height: 5dvh;
+      margin-left: 20%;
+      margin-top: 7dvh;
+      }
+      .BlueLabel {
+      margin-left: 20%;
+      margin-top: 7dvh;
+      }
+
       .BlueButton{
         margin-left:2.5%; 
-        margin-top:4dvh; 
+        margin-top:5.5dvh; 
         margin-bottom:0dvh; 
-        min-width:20%; 
+        min-width:25%; 
         height:7dvh; 
-        font-size: 1.5rem; 
+        font-size: 1.2rem; 
         background-color: #7e8eab;   
         border: #7e8eab;
       }
@@ -1193,17 +1202,7 @@ span {
   }
 }
 
-.tb {
-  width: 60%;
-  height: 5dvh;
-  margin-left: 20%;
-  margin-top: 7dvh;
-}
 
-.BlueLabel {
-  margin-left: 20%;
-  margin-top: 7dvh;
-}
 
 .allbuttonshoulduseit {
   //從這個標籤去找其他修改的地方 修改1
@@ -1244,16 +1243,44 @@ span {
 
     .BlueBack{
     width: 80%;
-    height: 45dvh;
+    height: 40dvh;
     margin-left:10%;
+
+    .BlueH1{
+      margin-top:7dvh;
+    }
+
+    .BlueForm{
+      margin-top: 1dvh;
+
+      .BlueText{
+      width: 80%;
+      height: 3dvh;
+      margin-top: 4dvh;
+      margin-left: 10%;
+      }
+
+      .BlueLabel {
+        font-size: 0.9rem;
+      margin-left: 10%;
+      margin-top: 4.5dvh;
+      }
+
+      .BlueButton{
+        min-width:40%; 
+        height:6.5dvh; 
+        font-size: 1rem;
+        margin-top: 4dvh; 
+        
+      }
+    }
   }
   }
-  /* 針對手機設備的樣式 */
   
 }
 
 @media (max-width: 1199px) {
-  /* 針對pc設備的樣式 */
+  /* 針對平板設備的樣式 */
   
 }
 </style>

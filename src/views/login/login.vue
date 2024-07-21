@@ -186,16 +186,10 @@ export default {
                 <input class="leftC" type="checkbox" name="" id="cBox" v-model="cBox">
                 <p class="textC">保留我的登入資訊</p>
             </div>
-            <!-- <div class="logbox">
-                <button type="button" class="button" @click="register">註冊帳號</button>
-                <Popper arrow placement="top" class="root" style="margin-top: 0%;" :content="this.b">
-                  <button type="button" class="buttonA" @click="log()">登入</button>
-                </Popper>
-            </div> -->
             <div class="logbox" >
               <button type="button" class="button" @click="register">註冊帳號</button>
               <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#additem">忘記帳號</button>
-              <Popper arrow placement="top" class="root" style="margin-top: 0%;" :content="this.b">
+              <Popper arrow placement="top" class="root" style="margin-top: 0dvh;" :content="this.b">
                   <button type="button" class="buttonA" @click="log()">登入</button>
               </Popper>
             </div>
@@ -243,8 +237,8 @@ export default {
 
 <style scoped lang="scss">
 .cBox{
-  width: 100vw;
-  height: 90vh;
+  width: 100%;
+  height: 92dvh;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -252,8 +246,8 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   .box{
-  height: 75%;
-  width: 40%;
+    width: 35%;
+    height: 70dvh;
   // margin-top: 2%;
   align-self: center;
   align-items: center;
@@ -262,7 +256,7 @@ export default {
   .textT{
     font-family:'jf-openhuninn-2.0';
     font-size: 2em;
-    margin-top: 20px;
+    margin-top: 5dvh;
     color: white;
   }
   .textL{
@@ -283,7 +277,7 @@ export default {
   }
   .eye{
     position: absolute;
-    bottom: 50%;
+    bottom: 3.5dvh;
     right: 14%;
     transition: 0.3s;
     &:hover{
@@ -309,25 +303,29 @@ export default {
   }
   .logbox{
     margin: 0 auto;
+    margin-top: 1dvh;
     display: flex;
     height: 15%;
-    width: 80%;
-    justify-content: space-between;
+    width: 90%;
+    // justify-content: space-between;
     .button{
-        width: 9.2vw;
-        height: 5.9vh;
+        width: 25%;
+        height: 5.9dvh;
         border: none;
         background-color: rgb(176, 182, 213);
         border-radius: 10px;
         font-size: 1.5em;
         font-family:'jf-openhuninn-2.0';
         margin-top: 2.5%;
+        margin-right: 6%;
+        margin-left: 5%;
     }
   }
 }
 }
 
 .root {
+      width: 20%;
     --popper-theme-background-color: #333333;
     --popper-theme-background-color-hover: #333333;
     --popper-theme-text-color: #ffffff;
@@ -338,33 +336,83 @@ export default {
     --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
     margin: 0;
     .buttonA{
-        width: 9.2vw;
-        height: 5.9vh;
+        width: 100%;
+        height: 5.9dvh;
         border: none;
         background-color: rgb(176, 182, 213);
         border-radius: 10px;
         font-size: 1.5em;
         font-family:'jf-openhuninn-2.0';
+        margin-left: 50%;
     }
   }
-  .buttonR{
-        width: 9.2vw;
-        height: 7.9vh;
-        border: none;
-        background-color: rgb(176, 182, 213);
-        border-radius: 10px;
-        font-size: 1.5em;
-        font-family:'jf-openhuninn-2.0';
-}
-.buttonS{
-        width: 5.2vw;
-        height: 4.9vh;
-        border: none;
-        background-color: rgb(176, 182, 213);
-        border-radius: 10px;
-        font-size: 1.5em;
-        font-family:'jf-openhuninn-2.0';
-        margin-top: 4%;
-        margin-right: 2%;
+
+  @media (max-width: 767px) {
+
+
+    .cBox{
+      
+
+      .box{
+        width: 80%;
+        height: 62dvh;
+        // margin-top: 5dvh;
+        margin-bottom: 12dvh;
+
+        .textT{
+          font-size: 1.5em;
+        }
+
+        .textL{
+    font-size: 1.2em;
+  }
+  .tb{
+
+  }
+  .tbp{
+
+  }
+  .eye{
+
+    &:hover{
+
+    }
+  }
+  .tbc{
+
+  }
+  .checkbox{
+
+    .leftC{
+
+  }
+  .textC{
+
+  }
+  }
+  .logbox{
+
+    .button{
+      width: 40%;
+      font-size: 1.1em;
+      margin-right: 5%;
+        margin-left: 0%;
+        margin-top: 1.5dvh;
+    }
+  }
+      }
+    }
+
+
+
+    .root {
+      width: 40%;
+
+    .buttonA{
+      font-size: 1.1em;
+      margin-left: 3%;
+    }
+  }
+
 }
 </style>
