@@ -309,7 +309,7 @@ export default {
     width: 90%;
     // justify-content: space-between;
     .button{
-        width: 25%;
+        min-width: 25%;
         height: 5.9dvh;
         border: none;
         background-color: rgb(176, 182, 213);
@@ -325,7 +325,7 @@ export default {
 }
 
 .root {
-      width: 20%;
+  min-width: 20%;
     --popper-theme-background-color: #333333;
     --popper-theme-background-color-hover: #333333;
     --popper-theme-text-color: #ffffff;
@@ -336,7 +336,7 @@ export default {
     --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
     margin: 0;
     .buttonA{
-        width: 100%;
+      min-width: 100%;
         height: 5.9dvh;
         border: none;
         background-color: rgb(176, 182, 213);
@@ -355,7 +355,7 @@ export default {
 
       .box{
         width: 80%;
-        height: 62dvh;
+        height: 65dvh;
         // margin-top: 5dvh;
         margin-bottom: 12dvh;
 
@@ -391,11 +391,13 @@ export default {
   }
   }
   .logbox{
+    justify-content: space-between;
+
 
     .button{
-      width: 40%;
+      min-width: 30%;
       font-size: 1.1em;
-      margin-right: 5%;
+      margin-right: 7%;
         margin-left: 0%;
         margin-top: 1.5dvh;
     }
@@ -406,11 +408,11 @@ export default {
 
 
     .root {
-      width: 40%;
+      min-width: 30%;
 
     .buttonA{
       font-size: 1.1em;
-      margin-left: 3%;
+      margin-left: 0%;
     }
   }
 
