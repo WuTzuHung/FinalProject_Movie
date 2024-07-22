@@ -532,15 +532,15 @@ export default {
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in playPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
-          <div class="row">
+          <div class="row" >
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col">
               <a @click="chooseMovie(item)">
-                <div class="card" style="width: 410px;">
-                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style="height: 500px;"/>
-                  <div class="card-body" style="height: 125px;">
-                      <p class="card-text" style="margin-top: 10px;">
-                        <span>{{ item.title }}</span><br />
-                        <span>{{ "上映日期：" + item.release_date }}</span>
+                <div class="card" style="width: 80%;">
+                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style=" height: 55dvh;"/>
+                  <div class="card-body" style="min-height: 20dvh;">
+                      <p class="card-text" style="margin-top: 1.3dvh;">
+                        <span  >{{ item.title }}</span><br />
+                        <span  >{{ "上映日期：" + item.release_date }}</span>
                       </p>
                   </div>
                 </div>
@@ -550,15 +550,15 @@ export default {
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" @click="prevSlide" style="left: -150px">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" @click="prevSlide" >
         <span class="carousel-control-prev-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-left" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-left" ></i>
         </span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" @click="nextSlide" style="right: -120px">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" @click="nextSlide" >
         <span class="carousel-control-next-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-right" style="font-size: 50px">
+          <i class="fa-solid fa-circle-arrow-right" >
             </i></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -572,7 +572,7 @@ export default {
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
               <a @click="chooseMovie(item)">
-                <div class="card" style="width: 410px;">
+                <div class="card" style="width: 100%;">
                   <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style="height: 500px;"/>
                   <div class="card-body" style="height: 125px;">
                       <p class="card-text" style="margin-top: 10px;">
@@ -587,15 +587,15 @@ export default {
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev" @click="prevSlide" style="left: -150px">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev" @click="prevSlide" >
         <span class="carousel-control-prev-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-left" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-left"></i>
         </span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next" @click="nextSlide" style="right: -120px">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next" @click="nextSlide" >
         <span class="carousel-control-next-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-right" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-right"></i>
         </span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -624,15 +624,15 @@ export default {
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev" @click="prevSlide" style="left: -150px">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev" @click="prevSlide">
         <span class="carousel-control-prev-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-left" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-left"></i>
         </span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next" @click="nextSlide" style="right: -120px">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next" @click="nextSlide">
         <span class="carousel-control-next-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-right" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-right"></i>
         </span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -729,14 +729,20 @@ export default {
 
 <style scoped lang="scss">
 h1 {
-  margin-top: 10px;
+  margin-top: 2.5dvh;
   text-align: center;
 }
-span, button, p, label, select {
-  // font-family: "Montserrat", sans-serif, sans-serif, "M PLUS 1";
+p, label, select {
   font-family:'jf-openhuninn-2.0';
   color: rgb(51, 51, 62);
-  font-size: 22px;
+  font-size: 1.1em;
+}
+
+span, button {
+  width: 5%;
+  height: 15dvh;
+  font-size: 1.3em;
+  color: rgb(51, 51, 62);
 }
 
 .movieType {
@@ -751,12 +757,50 @@ span, button, p, label, select {
   }
 }
 .card {
-  margin: 10px 0;
+  margin: 2dvh 5dvh;
 }
 
 .textHeader{
   font-family:'jf-openhuninn-2.0';
   font-size: 2em;
   margin: 0;
+}
+
+@media (max-width: 767px) {
+    .container {
+        #carouselExample {
+            .carousel-inner {
+                .carousel-item {
+                    .row {
+                      // width: 50%;
+                      
+                        .col {
+                          // width: 50%;
+
+                            .card {
+                              // width: 50%;
+                                .card-img-top {
+                                }
+                                .card-body {
+                                    .card-text {
+                                    }
+                                }
+                            }
+                            .carousel-caption {
+                            }
+                        }
+                    }
+                }
+            }
+            .carousel-control-prev {
+                .carousel-control-prev-icon {
+                }
+            }
+            .carousel-control-next {
+                .carousel-control-next-icon {
+                }
+            }
+        }
+    }
 }
 </style>
