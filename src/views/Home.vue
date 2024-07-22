@@ -534,13 +534,13 @@ export default {
         <div v-for="(itemsChunk, index) in playPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row" >
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col">
-              <a @click="chooseMovie(item)">
-                <div class="card" style="width: 80%;">
-                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style=" height: 55dvh;"/>
-                  <div class="card-body" style="min-height: 20dvh;">
-                      <p class="card-text" style="margin-top: 1.3dvh;">
-                        <span  >{{ item.title }}</span><br />
-                        <span  >{{ "上映日期：" + item.release_date }}</span>
+              <a class="aitem" @click="chooseMovie(item)">
+                <div class="card">
+                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
+                  <div class="card-body">
+                      <p class="card-text">
+                        <span>{{ item.title }}</span><br />
+                        <span>{{ "上映日期：" + item.release_date }}</span>
                       </p>
                   </div>
                 </div>
@@ -572,10 +572,10 @@ export default {
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
               <a @click="chooseMovie(item)">
-                <div class="card" style="width: 100%;">
-                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style="height: 500px;"/>
-                  <div class="card-body" style="height: 125px;">
-                      <p class="card-text" style="margin-top: 10px;">
+                <div class="card">
+                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
+                  <div class="card-body">
+                      <p class="card-text">
                         <span>{{ item.title }}</span><br />
                         <span>{{ "上映日期：" + item.release_date }}</span>
                       </p>
@@ -609,10 +609,10 @@ export default {
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
               <a @click="chooseMovie(item)">
-                <div class="card" style="width: 410px;">
-                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style="height: 500px;"/>
-                  <div class="card-body" style="height: 125px;">
-                      <p class="card-text" style="margin-top: 10px;">
+                <div class="card">
+                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
+                  <div class="card-body">
+                      <p class="card-text">
                         <span>{{ item.title }}</span><br />
                         <span>{{ "上映日期：" + item.release_date }}</span>
                       </p>
@@ -640,8 +640,8 @@ export default {
   </div>
   <h1>搜尋電影</h1>
   <div class="container">
-    <input type="text" v-model="searchText" required style=" width: 25vw; border-radius: 0%; outline: none; resize: none; border: 0; background: none; border-bottom: 1px solid black;"/>
-    <button type="submit" class="btn btn-outline-dark" @click="searchMovie" style="margin-left: 10px">
+    <input class="movieSearch" type="text" v-model="searchText" required />
+    <button type="submit" class="btn btn-outline-dark" @click="searchMovie">
       搜尋
     </button>
 
@@ -651,10 +651,10 @@ export default {
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
               <a @click="chooseMovie(item)">
-                <div class="card" style="width: 410px;">
-                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style="height: 500px;"/>
-                  <div class="card-body" style="height: 125px;">
-                      <p class="card-text" style="margin-top: 10px;">
+                <div class="card">
+                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
+                  <div class="card-body">
+                      <p class="card-text">
                         <span>{{ item.title }}</span><br />
                         <span>{{ "上映日期：" + item.release_date }}</span>
                       </p>
@@ -666,15 +666,15 @@ export default {
           </div>
         </div>
       </div>
-      <button v-if="searchPerPage.length > 0" class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev" @click="prevSlide" style="left: -150px">
+      <button v-if="searchPerPage.length > 0" class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev" @click="prevSlide">
         <span class="carousel-control-prev-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-left" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-left"></i>
         </span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button v-if="searchPerPage.length > 0" class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next" @click="nextSlide" style="right: -120px">
+      <button v-if="searchPerPage.length > 0" class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next" @click="nextSlide">
         <span class="carousel-control-next-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-right" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-right"></i>
         </span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -682,7 +682,7 @@ export default {
   </div>
   
   <h1>分類選擇</h1>
-  <div class="movieType" style="margin: 20px 0 60px 0;">
+  <div class="movieType">
     <select @change="getTypeMovie">
       <option v-for="(item, index) in this.objtype" :key="index">
         {{ item.name }}
@@ -696,10 +696,10 @@ export default {
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
               <a @click="chooseMovie(item)">
-                <div class="card" style="width: 410px;">
+                <div class="card">
                   <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style="height: 500px;"/>
-                  <div class="card-body" style="height: 125px;">
-                      <p class="card-text" style="margin-top: 10px;">
+                  <div class="card-body">
+                      <p class="card-text">
                         <span>{{ item.title }}</span><br />
                         <span>{{ "上映日期：" + item.release_date }}</span>
                       </p>
@@ -711,15 +711,15 @@ export default {
           </div>
         </div>
       </div>
-      <button v-if="typePerPage.length > 0" class="carousel-control-prev" type="button" data-bs-target="#customCarousel4" data-bs-slide="prev" @click="prevSlide" style="left: -150px">
+      <button v-if="typePerPage.length > 0" class="carousel-control-prev" type="button" data-bs-target="#customCarousel4" data-bs-slide="prev" @click="prevSlide">
         <span class="carousel-control-prev-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-left" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-left"></i>
         </span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button v-if="typePerPage.length > 0" class="carousel-control-next" type="button" data-bs-target="#customCarousel4" data-bs-slide="next" @click="nextSlide" style="right: -120px">
+      <button v-if="typePerPage.length > 0" class="carousel-control-next" type="button" data-bs-target="#customCarousel4" data-bs-slide="next" @click="nextSlide">
         <span class="carousel-control-next-icon" aria-hidden="true">
-          <i class="fa-solid fa-circle-arrow-right" style="font-size: 50px"></i>
+          <i class="fa-solid fa-circle-arrow-right"></i>
         </span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -728,10 +728,15 @@ export default {
 </template>
 
 <style scoped lang="scss">
+a {
+  text-decoration: none;
+}
+
 h1 {
   margin-top: 2.5dvh;
   text-align: center;
 }
+
 p, label, select {
   font-family:'jf-openhuninn-2.0';
   color: rgb(51, 51, 62);
@@ -745,19 +750,54 @@ span, button {
   color: rgb(51, 51, 62);
 }
 
+.card{
+  width: 80%;
+  margin: 2dvh 5dvh;
+
+  .card-img-top{
+    height: 55dvh;
+  }
+
+  .card-body{
+    min-height: 20dvh;
+
+    .card-text{
+      margin-top: 1.3dvh;
+    }
+  }
+}
+
+.movieSearch{
+  width: 20%; 
+  border-radius: 0%; 
+  outline: none; 
+  resize: none; 
+  border: 0; 
+  background: none; 
+  border-bottom: 1px solid black;
+  margin-bottom: 5dvh;
+  margin-top: 5dvh;
+  margin-left: 5%;
+
+}
+
+.btn-outline-dark{
+  padding: 0px 5px;  /* 根据需要调整填充 */
+  width: 10%;
+  height: 5dvh;
+  margin-left: 3%;
+}
+
 .movieType {
   button {
     width: 200px;
     height: 100px;
-    margin: 22px;
+    margin: 30px 0 60px 0;
 
     &:hover {
       background-color: gray;
     }
   }
-}
-.card {
-  margin: 2dvh 5dvh;
 }
 
 .textHeader{
@@ -772,13 +812,11 @@ span, button {
             .carousel-inner {
                 .carousel-item {
                     .row {
-                      // width: 50%;
                       
                         .col {
-                          // width: 50%;
-
+                          .aitem{
                             .card {
-                              // width: 50%;
+                              // width: 70%;
                                 .card-img-top {
                                 }
                                 .card-body {
@@ -786,6 +824,7 @@ span, button {
                                     }
                                 }
                             }
+                          }
                             .carousel-caption {
                             }
                         }
