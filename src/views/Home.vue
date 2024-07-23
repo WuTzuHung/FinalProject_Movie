@@ -533,7 +533,7 @@ export default {
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in playPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row" >
-            <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col">
+            <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
               <a class="aitem" @click="chooseMovie(item)">
                 <div class="card">
                   <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
@@ -571,7 +571,7 @@ export default {
         <div v-for="(itemsChunk, index) in comePerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
-              <a @click="chooseMovie(item)">
+              <a class="aitem" @click="chooseMovie(item)">
                 <div class="card">
                   <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
                   <div class="card-body">
@@ -608,7 +608,7 @@ export default {
         <div v-for="(itemsChunk, index) in popularPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
-              <a @click="chooseMovie(item)">
+              <a class="aitem" @click="chooseMovie(item)">
                 <div class="card">
                   <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
                   <div class="card-body">
@@ -650,7 +650,7 @@ export default {
         <div v-for="(itemsChunk, index) in searchPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
-              <a @click="chooseMovie(item)">
+              <a class="aitem" @click="chooseMovie(item)">
                 <div class="card">
                   <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
                   <div class="card-body">
@@ -695,9 +695,9 @@ export default {
         <div v-for="(itemsChunk, index) in typePerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
             <div v-for="(item, innerIndex) in itemsChunk" :key="innerIndex" class="col-md-4">
-              <a @click="chooseMovie(item)">
+              <a class="aitem" @click="chooseMovie(item)">
                 <div class="card">
-                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報" style="height: 500px;"/>
+                  <img :src="'https://image.tmdb.org/t/p/w500' + item.poster_path" class="d-block w-100 card-img-top" alt="無電影海報"/>
                   <div class="card-body">
                       <p class="card-text">
                         <span>{{ item.title }}</span><br />
@@ -728,6 +728,27 @@ export default {
 </template>
 
 <style scoped lang="scss">
+
+.aitem{
+  display: flex;
+  justify-content: center;
+}
+
+.row{
+  display: flex;
+  justify-content: center; /* 水平居中 */
+}
+
+.col-md-4{
+  max-width: 30%;
+}
+
+.container{
+  margin: 0%;
+  padding: 0px;
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -750,9 +771,19 @@ span, button {
   color: rgb(51, 51, 62);
 }
 
+.carousel-control-prev{
+  margin-left: 1.5%;
+  margin-top: 25dvh;
+}
+
+.carousel-control-next{
+  margin-right: 2.5%;
+  margin-top: 25dvh;
+}
+
 .card{
-  width: 80%;
-  margin: 2dvh 5dvh;
+  width: 75%;
+  margin: 2dvh 2dvh;
 
   .card-img-top{
     height: 55dvh;
@@ -777,8 +808,7 @@ span, button {
   border-bottom: 1px solid black;
   margin-bottom: 5dvh;
   margin-top: 5dvh;
-  margin-left: 5%;
-
+  margin-left: 2.5%;
 }
 
 .btn-outline-dark{
@@ -810,10 +840,17 @@ span, button {
     .container {
         #carouselExample {
             .carousel-inner {
+              
                 .carousel-item {
+                  
                     .row {
-                      
-                        .col {
+                      display: flex;
+                      flex-wrap: nowrap; /* 防止换行 */
+                      overflow: hidden; /* 隐藏溢出的内容 */ 
+                        .col-md-4 {
+                          flex: 0 0 100%; /* 每列占据全部宽度 */
+                          max-width: 100%; /* 最大宽度为100% */
+                          // padding: 0; /* 去除 padding */
                           .aitem{
                             .card {
                               // width: 70%;
@@ -842,4 +879,41 @@ span, button {
         }
     }
 }
+
+.container {
+        #carouselExample1 {
+            .carousel-inner {
+                .carousel-item {
+                    .row {
+                        display: flex;
+                        flex-wrap: nowrap; /* 防止换行 */
+                        overflow: hidden; /* 隐藏溢出的内容 */
+                        .col-md-4 {
+                            flex: 0 0 100%; /* 每列占据全部宽度 */
+                            max-width: 100%; /* 最大宽度为100% */
+                            padding: 0; /* 去除 padding */
+                            .aitem {
+                                .card {
+                                    // width: 100%; /* 可以根据需要设置 */
+                                    .card-img-top {
+                                        width: 100%; /* 确保图片宽度占满 */
+                                    }
+                                    .card-body {
+                                        .card-text {
+                                        }
+                                    }
+                                }
+                            }
+                            .carousel-caption {
+                            }
+                        }
+                    }
+                }
+            }
+            .carousel-control-prev,
+            .carousel-control-next {
+                // 如果需要调整按钮位置，可在此设置
+            }
+        }
+    }
 </style>
