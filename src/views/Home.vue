@@ -654,7 +654,7 @@ export default {
     </div>
   </div>
   <h1>搜尋電影</h1>
-  <div class="container">
+  <div class="container4">
     <input class="movieSearch" type="text" v-model="searchText" required />
     <button type="submit" class="btn btn-outline-dark" @click="searchMovie">
       搜尋
@@ -698,7 +698,7 @@ export default {
   
   <h1>分類選擇</h1>
   <div class="movieType">
-    <select @change="getTypeMovie">
+    <select class="custom-select" @change="getTypeMovie">
       <option v-for="(item, index) in this.objtype" :key="index">
         {{ item.name }}
       </option>
@@ -764,12 +764,22 @@ export default {
   max-width: 100%;
 }
 
+.container4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  padding: 0px;
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
 }
 
 h1 {
   margin-top: 2.5dvh;
+  // margin-bottom: 3dvh;
   text-align: center;
 }
 
@@ -814,7 +824,7 @@ span, button {
 }
 
 .movieSearch{
-  width: 20%; 
+  width: 15%; 
   border-radius: 0%; 
   outline: none; 
   resize: none; 
@@ -823,26 +833,26 @@ span, button {
   border-bottom: 1px solid black;
   margin-bottom: 5dvh;
   margin-top: 5dvh;
-  margin-left: 2.5%;
 }
 
 .btn-outline-dark{
-  padding: 0px 5px;  /* 根据需要调整填充 */
-  width: 10%;
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  width: 5%;
   height: 5dvh;
-  margin-left: 3%;
+  margin-left: 2%;
+  overflow: hidden; /* 隐藏溢出的文本 */
+  text-overflow: ellipsis; /* 使用省略号表示溢出的文本 */
+  white-space: nowrap; /* 防止文本换行 */
 }
 
-.movieType {
-  button {
-    width: 200px;
-    height: 100px;
-    margin: 30px 0 60px 0;
-
-    &:hover {
-      background-color: gray;
-    }
-  }
+.custom-select {
+  min-width: 5%;
+  height: 5dvh;
+  // text-align: center;
+  margin-top: 3dvh;
+  margin-bottom: 5dvh;
 }
 
 .textHeader{
@@ -852,20 +862,23 @@ span, button {
 }
 
 @media (max-width: 767px) {
+
+  .movieSearch{
+  width: 40%; 
+  
+  margin-left: 5%;
+}
     .container {
+      
         .carousel {
             .carousel-inner {
               
                 .carousel-item {
                   
                     .row {
-                      // display: flex;
-                      // flex-wrap: nowrap; /* 防止换行 */
-                      // overflow: hidden; /* 隐藏溢出的内容 */ 
+                      
                         .col-md-4 {
-                          // flex: 0 0 100%; /* 每列占据全部宽度 */
-                          // max-width: 100%; /* 最大宽度为100% */
-                          // padding: 0; /* 去除 padding */
+                          
                           .aitem{
                             .card {
                               // width: 70%;
@@ -894,42 +907,62 @@ span, button {
 }
         }
     }
+
+    .movieType{
+      .custom-select{
+        // min-width: 20%;
+        font-size: 1.1em;
+      }
+    }
+
+    .container4 {
+      .btn-outline-dark{
+        width: 15%;
+          max-width: 15%;
+          margin-left: 6%;
+          font-size: 1.1em;
+      }
+        .carousel {
+            .carousel-inner {
+              
+                .carousel-item {
+                  
+                    .row {
+                      
+                        .col-md-4 {
+                          
+                          .aitem{
+                            .card {
+                              // width: 70%;
+                                .card-img-top {
+                                }
+                                .card-body {
+                                    .card-text {
+                                    }
+                                }
+                            }
+                          }
+                            .carousel-caption {
+                            }
+                        }
+                    }
+                }
+            }
+            .carousel-control-prev{
+              margin-left: 0.5%;
+              margin-top: 30dvh;
 }
 
-// .container {
-//         #carouselExample1 {
-//             .carousel-inner {
-//                 .carousel-item {
-//                     .row {
-//                         display: flex;
-//                         flex-wrap: nowrap; /* 防止换行 */
-//                         overflow: hidden; /* 隐藏溢出的内容 */
-//                         .col-md-4 {
-//                             flex: 0 0 100%; /* 每列占据全部宽度 */
-//                             max-width: 100%; /* 最大宽度为100% */
-//                             padding: 0; /* 去除 padding */
-//                             .aitem {
-//                                 .card {
-//                                     // width: 100%; /* 可以根据需要设置 */
-//                                     .card-img-top {
-//                                         width: 100%; /* 确保图片宽度占满 */
-//                                     }
-//                                     .card-body {
-//                                         .card-text {
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                             .carousel-caption {
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//             .carousel-control-prev,
-//             .carousel-control-next {
-//                 // 如果需要调整按钮位置，可在此设置
-//             }
-//         }
-//     }
+            .carousel-control-next{
+              margin-right: 7.5%;
+              margin-top: 30dvh;
+}
+        }
+    }
+
+}
+      
+
+
+
 </style>
