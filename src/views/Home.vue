@@ -133,6 +133,14 @@ export default {
         console.error(error);
       }
     },
+    updateItemsPerSlide() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 767) {
+        this.itemsPerSlide = 1; // 手机尺寸时每页显示1个项目
+      } else {
+        this.itemsPerSlide = 3; // 桌面尺寸时每页显示3个项目
+      }
+    },
     async getComeMovie() { // 即將上映
       const options = {
         method: "GET",
@@ -522,7 +530,12 @@ export default {
     await this.getComeMovie();
     await this.getPopularMovie();
     this.getMovieType();
+    this.updateItemsPerSlide();
+    window.addEventListener('resize', this.updateItemsPerSlide);
     },
+    beforeDestroy() {
+    window.removeEventListener('resize', this.updateItemsPerSlide);
+  },
 };
 </script>
 
@@ -740,7 +753,7 @@ export default {
 }
 
 .col-md-4{
-  max-width: 30%;
+  // max-width: 100%;
 }
 
 .container{
@@ -772,13 +785,13 @@ span, button {
 }
 
 .carousel-control-prev{
-  margin-left: 1.5%;
-  margin-top: 25dvh;
+  margin-left: -1%;
+  margin-top: 30dvh;
 }
 
 .carousel-control-next{
-  margin-right: 2.5%;
-  margin-top: 25dvh;
+  margin-right: 0.5%;
+  margin-top: 30dvh;
 }
 
 .card{
@@ -838,18 +851,18 @@ span, button {
 
 @media (max-width: 767px) {
     .container {
-        #carouselExample {
+        .carousel {
             .carousel-inner {
               
                 .carousel-item {
                   
                     .row {
-                      display: flex;
-                      flex-wrap: nowrap; /* 防止换行 */
-                      overflow: hidden; /* 隐藏溢出的内容 */ 
+                      // display: flex;
+                      // flex-wrap: nowrap; /* 防止换行 */
+                      // overflow: hidden; /* 隐藏溢出的内容 */ 
                         .col-md-4 {
-                          flex: 0 0 100%; /* 每列占据全部宽度 */
-                          max-width: 100%; /* 最大宽度为100% */
+                          // flex: 0 0 100%; /* 每列占据全部宽度 */
+                          // max-width: 100%; /* 最大宽度为100% */
                           // padding: 0; /* 去除 padding */
                           .aitem{
                             .card {
@@ -868,52 +881,53 @@ span, button {
                     }
                 }
             }
-            .carousel-control-prev {
-                .carousel-control-prev-icon {
-                }
-            }
-            .carousel-control-next {
-                .carousel-control-next-icon {
-                }
-            }
+            .carousel-control-prev{
+              margin-left: 0.5%;
+              margin-top: 30dvh;
+}
+
+            .carousel-control-next{
+              margin-right: 7.5%;
+              margin-top: 30dvh;
+}
         }
     }
 }
 
-.container {
-        #carouselExample1 {
-            .carousel-inner {
-                .carousel-item {
-                    .row {
-                        display: flex;
-                        flex-wrap: nowrap; /* 防止换行 */
-                        overflow: hidden; /* 隐藏溢出的内容 */
-                        .col-md-4 {
-                            flex: 0 0 100%; /* 每列占据全部宽度 */
-                            max-width: 100%; /* 最大宽度为100% */
-                            padding: 0; /* 去除 padding */
-                            .aitem {
-                                .card {
-                                    // width: 100%; /* 可以根据需要设置 */
-                                    .card-img-top {
-                                        width: 100%; /* 确保图片宽度占满 */
-                                    }
-                                    .card-body {
-                                        .card-text {
-                                        }
-                                    }
-                                }
-                            }
-                            .carousel-caption {
-                            }
-                        }
-                    }
-                }
-            }
-            .carousel-control-prev,
-            .carousel-control-next {
-                // 如果需要调整按钮位置，可在此设置
-            }
-        }
-    }
+// .container {
+//         #carouselExample1 {
+//             .carousel-inner {
+//                 .carousel-item {
+//                     .row {
+//                         display: flex;
+//                         flex-wrap: nowrap; /* 防止换行 */
+//                         overflow: hidden; /* 隐藏溢出的内容 */
+//                         .col-md-4 {
+//                             flex: 0 0 100%; /* 每列占据全部宽度 */
+//                             max-width: 100%; /* 最大宽度为100% */
+//                             padding: 0; /* 去除 padding */
+//                             .aitem {
+//                                 .card {
+//                                     // width: 100%; /* 可以根据需要设置 */
+//                                     .card-img-top {
+//                                         width: 100%; /* 确保图片宽度占满 */
+//                                     }
+//                                     .card-body {
+//                                         .card-text {
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                             .carousel-caption {
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//             .carousel-control-prev,
+//             .carousel-control-next {
+//                 // 如果需要调整按钮位置，可在此设置
+//             }
+//         }
+//     }
 </style>
