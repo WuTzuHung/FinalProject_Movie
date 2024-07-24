@@ -8,7 +8,7 @@ export default {
       objtype: [], // 電影所有類型
       objSearchMovies: [], // 搜尋電影
       objTypeMovies: [], // 選擇類型找電影
-      itemsPerSlide: 3, // 每頁顯示的輪播項目數量
+      itemsPerSlide: 1, // 每頁顯示的輪播項目數量
       currentSlide: 0,
       selectedType: "", // 選單選到的類型
       searchText: "", // 搜尋電影
@@ -526,6 +526,8 @@ export default {
     },
   },
   async mounted() {
+  // 先设置itemsPerSlide以避免在加载数据前出现不合适的显示
+  this.updateItemsPerSlide();
     await this.getPlayMovie();
     await this.getComeMovie();
     await this.getPopularMovie();
