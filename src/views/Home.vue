@@ -659,7 +659,8 @@ export default {
     <button type="submit" class="btn btn-outline-dark" @click="searchMovie">
       搜尋
     </button>
-
+</div>
+<div class="container4-2">
     <div id="carouselExample3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in searchPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
@@ -778,7 +779,7 @@ a {
 }
 
 h1 {
-  margin-top: 2.5dvh;
+  margin-top: 2.7dvh;
   // margin-bottom: 3dvh;
   text-align: center;
 }
@@ -922,6 +923,9 @@ span, button {
           margin-left: 6%;
           font-size: 1.1em;
       }
+  }
+
+    .container4-2{
         .carousel {
             .carousel-inner {
               
@@ -958,7 +962,9 @@ span, button {
               margin-top: 30dvh;
 }
         }
-    }
+
+      }
+
 
 }
       
