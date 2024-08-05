@@ -6,11 +6,40 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
   <loc>https://azure-fantasy-movies.zeabur.app/</loc>
-  <lastmod>2024-07-19T07:14:53+00:00</lastmod>
+  <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+  <priority>1.0</priority>
 </url>
 
+<url>
+  <loc>https://azure-fantasy-movies.zeabur.app/moviecomment</loc>
+  <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://azure-fantasy-movies.zeabur.app/ticket</loc>
+  <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+</url>
+
+<url>
+  <loc>https://azure-fantasy-movies.zeabur.app/mypage</loc>
+  <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://azure-fantasy-movies.zeabur.app/create</loc>
+  <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://azure-fantasy-movies.zeabur.app/login</loc>
+  <lastmod>2024-08-05T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+</url>
 
 </urlset>
