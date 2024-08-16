@@ -15,17 +15,17 @@
 
 
 
-    <div v-if="isLoading"><img style="width:500px ; height: 500px;" src="./ticket/picture/GIF.gif" alt=""></div>
-    <div v-else>
+    <div v-if="isLoading"><img style="width:60%; height: 92dvh;" src="./ticket/picture/GIF.gif" alt=""></div>
+    <div v-else style="width: 100%;">
       <div class="box-wrapper">
         <div class="post-box" v-for="(movie, index) in paginatedMovies" :key="index" v-if="selectedTab === '正在熱映'">
           <div class="post"><img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt=""
               @click="gotointroduce(movie)">
-              <div style="border:1.5px solid pink; border-radius: 0px 0px 10px 10px;">
+              <div >
             <div style="color:black;" class="title">{{ movie.title }}</div>
             <!-- <div class="title1">{{ movie.original_title }}</div>
             <div>評分:{{ movie.vote_average === 0 ? '尚未有評分' : movie.vote_average }}</div> -->
-            <div style="color:black; margin-top: 0px; margin-bottom: 18px;">上映日:{{ movie.release_date }}</div>
+            <div style="color:black; margin-top: 0px; margin-bottom: 8px;">上映日:{{ movie.release_date }}</div>
           </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
           v-if="selectedTab === '即將上映'">
           <div class="post"><img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt=""
               @click="gotointroduce(movie)">
-              <div style="border:1.5px solid pink; border-radius: 0px 0px 10px 10px;">
+              <div style="">
             <div class="title" style="color:black; margin-top: 17px;">{{ movie.title }}</div>
             <!-- <div class="title1">{{ movie.original_title }}</div>
             <div>評分:{{ movie.vote_average === 0 ? '尚未有評分' : movie.vote_average }}</div> -->
@@ -308,20 +308,21 @@ export default {
 
 <style scoped lang="scss">
 .view {
-  width: 100vw;
+  width: 100%;
   // height: 270vh;
   background-color: white;
 
   .wrapper {
+    width: 100%;
     display: flex;
     justify-content: center;
     font-size: 24px;
-    line-height: 48px;
+    line-height: 7dvh;
 
     button {
-      width: 150px;
-      margin-top: 40px;
-      margin-right: 8px;
+      width: 12%;
+      margin-top: 5dvh;
+      margin-right: 0.3%;
       border: none;
       background-color: #a4b3cc;
 
@@ -338,18 +339,18 @@ export default {
   }
 
   .underline {
-    width: 308px;
+    width: 17%;
     text-align: center;
-    margin: 3px auto 40px;
+    margin: 1dvh auto 8dvh;
     height: 2px;
-    margin-left: 610.5px;
+    margin-left: 41.42%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 
     .bar,
     .bar1 {
       width: 50%;
-      height: 2px;
-      margin-bottom: -2px;
+      height: 0.1dvh;
+      margin-bottom: -2dvh;
       background-color: rgb(245, 120, 141);
     }
 
@@ -363,13 +364,14 @@ export default {
   }
 
   .box-wrapper {
-    width: 90vw;
+    width: 98%;
     display: flex;
     color: white;
     flex-wrap: wrap;
-    margin: auto;
+    margin: 0;
     text-align: center;
-    margin-left: 113px;
+    justify-content: center;
+    margin-left: 2%;
     // border: 1px solid black;
 
     .post-box {
@@ -425,7 +427,7 @@ export default {
 }
 
 .pagination {
-  width: 100vw;
+  width: 100%;
   justify-content: center;
   align-items: center;
 
@@ -445,7 +447,7 @@ export default {
 }
 
 .pagination {
-        width: 100vw;
+        width: 100%;
         justify-content: center;
         align-items: center;
         button {
