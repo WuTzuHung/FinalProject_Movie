@@ -72,10 +72,10 @@ export default {
       objPlayingMovie: [],
       objUpComing: [],
       //熱映中分頁數量跟所在頁碼
-      itemsPerPage: 12,
+      itemsPerPage: 1,
       currentPage: 1,
       //即將上映中分頁數量跟所在頁碼
-      upcomingItemsPerPage: 12,
+      upcomingItemsPerPage: 1,
       upcomingCurrentPage: 1,
       //過場
       isLoading: false,
@@ -85,6 +85,16 @@ export default {
     //回到最上方
     scrollToTop() {
       window.scrollTo(0, 0);
+    },
+    updateItemsPerSlide() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 767) {
+        this.itemsPerPage = 5; // 手机尺寸时每页显示1个项目
+        this.upcomingItemsPerPage = 5;
+      } else {
+        this.itemsPerPage = 12; // 桌面尺寸时每页显示3个项目
+        this.upcomingItemsPerPage = 12;
+      }
     },
     //即將上映的頁碼轉跳
     goToUpcomingPage(page) {
@@ -264,6 +274,13 @@ export default {
   },
   mounted() {
     this.nowPlaying()
+    // 先设置itemsPerSlide以避免在加载数据前出现不合适的显示
+  this.updateItemsPerSlide();
+  this.updateItemsPerSlide();
+    window.addEventListener('resize', this.updateItemsPerSlide);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateItemsPerSlide);
   },
   computed: {
     //把正在熱映的資料數切成index
@@ -463,4 +480,8 @@ export default {
         }
 
     }
+
+@media (max-width: 767px){
+
+}
 </style>  
