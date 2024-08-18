@@ -333,7 +333,7 @@ export default {
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: 24px;
+    font-size: 1.5em;
     line-height: 7dvh;
 
     button {
@@ -482,6 +482,105 @@ export default {
     }
 
 @media (max-width: 767px){
+
+  .view {
+  
+
+  .wrapper {
+    font-size: 1em;
+    
+
+    button {
+      width: 30%;
+      
+
+      cursor: pointer;
+
+      &.active {
+        
+      }
+
+      &:not(.active) {
+        
+      }
+    }
+  }
+
+  .underline {
+    width: 30%;
+    margin-left: 35%;
+
+    .bar,
+    .bar1 {
+      
+    }
+
+    .bar {
+      
+    }
+
+    .bar1 {
+      
+    }
+  }
+
+  .box-wrapper {
+    width: 92%;
+    margin-left: 8%;
+    
+
+    .post-box {
+      
+
+
+      .post {
+        
+        
+
+        img {
+          
+          
+        }
+
+        .title {
+          
+        }
+
+        .title1 {
+          
+        }
+
+      }
+    }
+  }
+}
+
+.pagination {
+  
+
+  button {
+    
+
+    &.active-page,
+    &:hover {
+      
+    }
+  }
+
+}
+
+.pagination {
+        
+        button {
+            
+
+            &.active-page,
+            &:hover {
+                
+            }
+        }
+
+    }
 
 }
 </style>  

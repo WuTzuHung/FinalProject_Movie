@@ -813,6 +813,8 @@ span, button {
 
   .card-img-top{
     height: 55dvh;
+    cursor: pointer;
+
   }
 
   .card-body{

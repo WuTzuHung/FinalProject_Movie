@@ -494,18 +494,18 @@ export default {
     <!-- 電影資料 -->
     <div class="header">
       <!-- <button type="button" @click="goback">去後台</button> -->
-      <div class="toppet" style="display: flex;">
-        <p class="textHeader" style="margin: 1% 3% 1% 3%; width: 50%; background-color: rgb(176, 182, 213); border-radius: 20px;">目前所在個人主頁帳號：{{ this.account }}</p>
-        <div class="searchaccount" style="display: flex;">
-            <input type="text" name="" id="" v-model="this.searchaccount" style="height: 50px;margin: auto 0 auto 0; border-radius: 5px;">
-            <button type="button" @click="searchmypageaccount()" class="button" style="width: 240px; height: 50px;margin: auto 0 auto 2%;">以帳號搜尋個人頁</button>
+      <div class="toppet" style="">
+        <p class="textHeader" style="">目前所在個人主頁帳號：{{ this.account }}</p>
+        <div class="searchaccount" style="">
+            <input class="inputSearch" type="text" name="" id="" v-model="this.searchaccount" style="">
+            <button class="inputButton button" type="button" @click="searchmypageaccount()"  style="">以帳號搜尋個人頁</button>
         </div>
       </div>
       <div class="movieData">
         <!-- <img :src="'https://image.tmdb.org/t/p/w342' + this.movieInfo.movieBack " alt="" style="width: 100vw; height: 100vh; opacity: 0.2; position: fixed; top: 0; left: 0;"><br> -->
         <div class="movieDataLeft">
           <a @click="chooseMovie(this.movieInfo)">
-            <img :src="'https://image.tmdb.org/t/p/w500' + this.movieInfo.moviePoster" alt=""/>
+            <img class="imgLeft" :src="'https://image.tmdb.org/t/p/w500' + this.movieInfo.moviePoster" alt=""/>
           </a>
         </div>
         <div class="movieDataRight">
@@ -518,23 +518,24 @@ export default {
             <div class="movieDataRight22">
               <div class="type">
                 <h3 class="textHeader">類型：</h3>
-                <span class="textall" style="line-height: 50px;" v-for="(item,index) in this.movieType" :key="index">{{ item }}<span v-if="index < this.movieType.length - 1" class="textall" style="font-size: 1em;">、</span></span><br>
+                <span class="textall" style="" v-for="(item,index) in this.movieType" :key="index">{{ item }}<span v-if="index < this.movieType.length - 1" class="textall" style="font-size: 1em;">、</span></span><br>
               </div>
               <div class="director">
                 <h3 class="textHeader">導演：</h3>
-                <span class="textall" style="line-height: 50px;" v-for="(item, index) in this.directors" :key="index">{{ item.original_name }}<span v-if="index < this.directors.length - 1">,</span></span><br>
+                <span class="textall" style="" v-for="(item, index) in this.directors" :key="index">{{ item.original_name }}<span v-if="index < this.directors.length - 1">,</span></span><br>
               </div>
               <div class="casts">
-                <h3 class="textHeader" style="width: 100px; height: 50px;">演員：</h3>
-                <div style="width: 90%;display: flex;"><p class="textall" style="line-height: 50px;" v-for="(item, index) in this.casts" :key="index">{{ item.original_name }}<span v-if="index < this.casts.length - 1" class="textall" style="font-size: 1em;">、</span></p><br></div>
+                <h3 class="textHeader" style="">演員：</h3>
+                <div style="width: 90%;display: flex;">
+                  <p class="textall" style="" v-for="(item, index) in this.casts" :key="index">{{ item.original_name }}<span v-if="index < this.casts.length - 1" class="textall" style="font-size: 1em;">、</span></p><br></div>
               </div>
               <div class="voteAvg">
                 <h3 class="textHeader">評分：</h3>
-                <h2 class="textall" style="line-height: 50px;">{{ this.movieInfo.movieVoteavg }}</h2>
+                <h2 class="textall" style="">{{ this.movieInfo.movieVoteavg }}</h2>
               </div>
               <div class="movieOverview">
-                <h3 class="textHeader" style="width: 90px; height: 50px;">簡介：</h3>
-                <p class="textallx" v-if="this.movieInfo.movieOverview" style="width: 85%;line-height: 50px;">{{ this.movieInfo.movieOverview }}</p>
+                <h3 class="textHeader" style="">簡介：</h3>
+                <p class="textallx" v-if="this.movieInfo.movieOverview" style="">{{ this.movieInfo.movieOverview }}</p>
                 <p class="textall" v-else>此電影無簡介</p>
               </div>
             </div>
@@ -691,65 +692,90 @@ span, button {
   }
 }
 .body {
-  width: 100vw;
+  width: 100%;
   height: 260vh;
 
   .header {
-    width: 100vw;
-    height: 90vh;
+    width: 100%;
+    // height: 90dvh;
     margin: 0 auto;
-    height: 900px;
+    height: 130dvh;
     // padding-top: 20px;
+
+    .toppet{
+      width: 100%;
+      height: 12dvh;
+      display: flex;
+      margin-top: 2dvh;
+      .textHeader{
+        margin: 1% 4% 1% 3.8%; width: 35%; background-color: rgb(176, 182, 213); border-radius: 20px;
+        line-height: 8dvh;
+      }
+
+      .searchaccount{
+        display: flex;
+        .inputSearch{
+          height: 50px;margin: auto 0 auto 0; border-radius: 5px;
+        }
+        .inputButton{
+          width: 240px; height: 50px;margin: auto 0 auto 2%;
+        }
+
+      }
+    }
     .movieData {
       display: flex;
       .movieDataLeft {
-        width: 47%;
-        height: 90vh;
-        height: 758px;
-        // text-align: end;
-        // align-items: end;
-        // margin-right: 50px;
+        width: 42%;
+
+        .imgLeft{
+          width: 80%;
+          height: 100dvh;
+          // margin-right: 13%;
+          margin-top: 3dvh;
+        }
+
       }
       .movieDataRight {
-        width: 65%;
-        height: 90vh;
-        height: 758px;
+        width: 57%;
+        height: 90dvh;
         text-align: start;
         align-items: start;
+        margin-left: 1%;
         .movieDataRight1{
           width: 100%;
-          height: 20vh;
+          height: 20dvh;
           display: flex;
             .movieDataRight11{
               width: 10%;
-              height: 40vh;
+              height: 40dvh;
               text-align: start;
               align-items: start;
             }
             .movieDataRight22{
               width: 90%;
-              height: 40vh;
+              height: 40dvh;
               text-align: start;
               align-items: start;
               .type{
                 display: flex;
-                margin-bottom: 10px;
+                margin-bottom: 2dvh;
               }
               .director{
                 display: flex;
-                margin-bottom: 10px;
+                margin-bottom: 2dvh;
               }
               .casts{
                 display: flex;
-                margin-bottom: 10px;
+                margin-bottom: 2dvh;
               }
               .voteAvg{
                 display: flex;
-                margin-bottom: 10px;
+                margin-bottom: 2dvh;
               }
               .movieOverview{
                 display: flex;
-                margin-bottom: 10px;
+                margin-bottom: 2dvh;
               }
           }
         }
@@ -788,6 +814,7 @@ span, button {
   font-family:'jf-openhuninn-2.0';
   font-size: 1.5em;
   margin: 0;
+  line-height: 50px;
 }
 .textallcast{
   font-family:'jf-openhuninn-2.0';
@@ -796,16 +823,18 @@ span, button {
 }
 .textallx{
   font-family:'jf-openhuninn-2.0';
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0;
   overflow: auto;  /* 或者使用 overflow: scroll; */
   max-height: 250px;  /* 设置最大高度，超出部分会产生滚动条 */
   // white-space: nowrap;  /* 防止文本换行 */
+  line-height: 50px;
+  width: 85%;
 }
 
 .textHeader{
   font-family:'jf-openhuninn-2.0';
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 0;
 }
 
