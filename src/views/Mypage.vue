@@ -1086,6 +1086,7 @@ span, button {
   }
   .commentArea {
     
+    
   }
   .footer{
     height: 110dvh;

@@ -472,6 +472,7 @@ export default {
             font-size: 18pt;
             // background-color: #525f75;
             border: 0px;
+            
 
             &.active-page,
             &:hover {
