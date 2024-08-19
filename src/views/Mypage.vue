@@ -517,7 +517,7 @@ export default {
           <div class="movieDataRight1">
             <div class="movieDataRight22">
               <div class="type">
-                <h3 class="textHeader">類型：</h3>
+                <h3 class="textHeader typeH3">類型：</h3>
                 <span class="textall" style="" v-for="(item,index) in this.movieType" :key="index">{{ item }}<span v-if="index < this.movieType.length - 1" class="textall" style="font-size: 1em;">、</span></span><br>
               </div>
               <div class="director">
@@ -526,7 +526,7 @@ export default {
               </div>
               <div class="casts">
                 <h3 class="textHeader" style="">演員：</h3>
-                <div style="width: 90%;display: flex;">
+                <div style="width: 50%;display: flex;">
                   <p class="textall" style="" v-for="(item, index) in this.casts" :key="index">{{ item.original_name }}<span v-if="index < this.casts.length - 1" class="textall" style="font-size: 1em;">、</span></p><br></div>
               </div>
               <div class="voteAvg">
@@ -535,7 +535,7 @@ export default {
               </div>
               <div class="movieOverview">
                 <h3 class="textHeader" style="">簡介：</h3>
-                <p class="textallx" v-if="this.movieInfo.movieOverview" style="">{{ this.movieInfo.movieOverview }}</p>
+                <p class="textallx2" v-if="this.movieInfo.movieOverview" style="">{{ this.movieInfo.movieOverview }}</p>
                 <p class="textall" v-else>此電影無簡介</p>
               </div>
             </div>
@@ -546,25 +546,25 @@ export default {
     <hr />
     <!-- 預告片 -->
     <h1 class="textTilte">個人影評</h1>
-    <p class="text" style="margin-bottom: 30px;">{{ this.moviecomment }}</p>
+    <p class="text" style="">{{ this.moviecomment }}</p>
     <div class="middle">
       <!-- <h1>預告片</h1> -->
       <!-- <video :src="this.trailerLink" controls></video> -->
       <!-- <iframe :src="this.trailerLink" controls></iframe>-->
       <!-- <div ref="youtubePlayer"></div> -->
-      <iframe width="1100" height="630" :src="'https://www.youtube.com/embed/' + trailerLink" frameborder="0" allowfullscreen></iframe>
+      <iframe class="middleIframe"  :src="'https://www.youtube.com/embed/' + trailerLink" frameborder="0" allowfullscreen></iframe>
     </div>
     <!-- 討論區 -->
 
   <hr />
     <div class="footer" ref="scheduleSwipers">
       <h1 class="textTilte">我的推薦電影</h1>
-      <swiper :options="swiperOption" ref="mySwiper">
+      <swiper :options="swiperOption" style="" ref="mySwiper">
         <swiper-slide v-for="(page, index) in pages" :key="index">
           <div class="grid-container">
             <div class="grid-item" v-for="(movie, i) in page" :key="i">
               <a @click="chooseMovie(movie)">
-                <img :src="'https://image.tmdb.org/t/p/w500' + movie.moviePoster" alt="" @click="">
+                <img :src="'https://image.tmdb.org/t/p/w500' + movie.moviePoster" class="gridImg" alt="" @click="">
                 <div class="textallx">{{ movie.movieTitle }}</div>
               </a>
             </div>
@@ -649,7 +649,7 @@ small, h1, h2, h3, h4, h5, h6 {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", sans-serif, sans-serif, "M PLUS 1";
   color: #557;
-  line-height: 50px;
+  line-height: 7dvh;
 }
 span, button {
   margin: 10px 10px 10px 0;
@@ -699,7 +699,7 @@ span, button {
     width: 100%;
     // height: 90dvh;
     margin: 0 auto;
-    height: 130dvh;
+    height: 125dvh;
     // padding-top: 20px;
 
     .toppet{
@@ -708,17 +708,29 @@ span, button {
       display: flex;
       margin-top: 2dvh;
       .textHeader{
-        margin: 1% 4% 1% 3.8%; width: 35%; background-color: rgb(176, 182, 213); border-radius: 20px;
+        margin: 1% 4% 1% 1%; 
+        min-width: 30%; 
+        height: 8dvh;
+        background-color: rgb(176, 182, 213); 
+        border-radius: 20px;
         line-height: 8dvh;
+        margin-left: 6%;
       }
 
       .searchaccount{
+        width: 100%;
         display: flex;
         .inputSearch{
-          height: 50px;margin: auto 0 auto 0; border-radius: 5px;
+          height: 7dvh;
+          width: 20%;
+          margin: auto 0 auto 0; 
+          border-radius: 5px;
+          margin-left: 5.5%;
         }
         .inputButton{
-          width: 240px; height: 50px;margin: auto 0 auto 2%;
+          min-width: 25%; 
+          height: 7dvh;
+          margin: auto 0 auto 2%;
         }
 
       }
@@ -737,8 +749,8 @@ span, button {
 
       }
       .movieDataRight {
-        width: 57%;
-        height: 90dvh;
+        width: 55%;
+        // height: 90dvh;
         text-align: start;
         align-items: start;
         margin-left: 1%;
@@ -760,6 +772,7 @@ span, button {
               .type{
                 display: flex;
                 margin-bottom: 2dvh;
+                width: 100%;
               }
               .director{
                 display: flex;
@@ -776,6 +789,8 @@ span, button {
               .movieOverview{
                 display: flex;
                 margin-bottom: 2dvh;
+                width: 90%;
+                height: 40dvh;
               }
           }
         }
@@ -783,38 +798,48 @@ span, button {
     }
   }
   .middle {
-    width: 100vw;
-    height: 90vh;
+    width: 100%;
+    height: 90dvh;
     // margin: 0 auto;
+
+    .middleIframe{
+      width:80%; 
+      height:90dvh;
+    }
   }
   .commentArea {
-    width: 95vw;
-    height: 30vh;
+    width: 95%;
+    height: 30dvh;
     margin: 0 auto;
   }
   .footer{
-    width: 95vw;
-    height: 60vh;
+    width: 100%;
+    // height: 60dvh;
     margin: 0 auto;
+    height: 356dvh;
   }
 }
 
 .textTilte{
   font-family:'jf-openhuninn-2.0';
   font-size: 4em;
-  margin: 0 0 20px 0;
+  margin: 8dvh 0 7dvh 0;
 }
 .text{
   font-family:'jf-openhuninn-2.0';
   font-size: 2em;
   width: 80%;
   margin: 0 auto 0 auto;
+  margin-bottom: 6dvh;
 }
 .textall{
   font-family:'jf-openhuninn-2.0';
   font-size: 1.5em;
   margin: 0;
-  line-height: 50px;
+  line-height: 5dvh;
+  margin-top: 1dvh;
+  // width: 80%;
+
 }
 .textallcast{
   font-family:'jf-openhuninn-2.0';
@@ -824,12 +849,29 @@ span, button {
 .textallx{
   font-family:'jf-openhuninn-2.0';
   font-size: 1.2em;
+  // margin: 0;
+  overflow: auto;  /* 或者使用 overflow: scroll; */
+  max-height: 35dvh;  /* 设置最大高度，超出部分会产生滚动条 */
+  // white-space: nowrap;  /* 防止文本换行 */
+  // line-height: 5dvh;
+  width: 85%;
+  height: 10dvh;
+  margin-top: 1dvh;
+  margin-left: 6%;
+  // margin-bottom: 5dvh;
+
+}
+
+.textallx2{
+  font-family:'jf-openhuninn-2.0';
+  font-size: 1.2em;
   margin: 0;
   overflow: auto;  /* 或者使用 overflow: scroll; */
-  max-height: 250px;  /* 设置最大高度，超出部分会产生滚动条 */
+  max-height: 35dvh;  /* 设置最大高度，超出部分会产生滚动条 */
   // white-space: nowrap;  /* 防止文本换行 */
-  line-height: 50px;
+  // line-height: 5dvh;
   width: 85%;
+  margin-top: 1dvh;
 }
 
 .textHeader{
@@ -842,22 +884,278 @@ span, button {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 1%;
 }
 
 .grid-item {
   /* Add your custom styles for each grid item here */
+  // height: 120dvh;
+  // height: 110dvh;
+
+  
+  a{
+    .gridImg{
+      width: 95%;
+      height: 100dvh;
+      // margin-right: 10%;
+      margin-left: 1%;
+      margin-right: 1%;
+    }
+  }
 }
 
 .button{
-        width: 11.2vw;
-        height: 5.9vh;
+        min-width: 5%;
+        height: 5.9dvh;
         border: none;
         background-color: rgb(176, 182, 213);
         border-radius: 10px;
         font-size: 1.5em;
         font-family:'jf-openhuninn-2.0';
-        margin-top: 2.5%;
+        margin-top: 1dvh;
         margin-left: 2%;
     }
+
+
+    @media (max-width: 767px){
+
+
+
+      .loader {
+  
+}
+.ldio-b9el9z8mymt div {
+  
+}
+.ldio-b9el9z8mymt div {
+  
+}
+.loadingio-spinner-rolling-3hvvs6i9c3b {
+  
+}
+.ldio-b9el9z8mymt {
+  
+}
+.ldio-b9el9z8mymt div {
+  
+}
+@keyframes ldio-b9el9z8mymt {
+  0% {
+    
+  }
+  100% {
+    
+  }
+}
+span, button, p, label, select {
+  
+}
+small, h1, h2, h3, h4, h5, h6 {
+  
+}
+h1, h2, h3, h4, h5, h6 {
+  
+}
+
+h2{
+  margin-left: 2%;
+}
+
+span, button {
+  
+}
+.col-md-8 {
+  
+}
+.card {
+  
+
+  .card-body {
+    
+  }
+  .btn-link {
+    
+  }
+
+  .btn-primary,
+  .btn-outline-primary {
+    
+  }
+
+  .text-muted {
+    
+  }
+
+  textarea {
+    
+  }
+
+  .mt-2 {
+    
+  }
+}
+.body {
+  
+
+  .header {
+    height: 165dvh;
+
+    .toppet{
+      display: flex;
+      flex-direction: column;
+      .textHeader{
+        font-size: 1em;
+        min-width: 10%;
+        height: 15dvh;
+        line-height: 4dvh;
+        margin: 0;
+        margin-top: 1dvh;
+        margin-left: 1.5%;
+         
+
+        
+      }
+
+      .searchaccount{
+        margin-top: 2dvh;
+        justify-content: center;
+        
+        .inputSearch{
+          height: 5dvh;
+          width: 30%;
+          margin-left: 4%;
+        }
+        .inputButton{
+          // min-width: 5%; 
+          // height: 4dvh;
+        }
+
+      }
+    }
+    .movieData {
+      display: flex;
+      flex-direction: column;
+      .movieDataLeft {
+        width: 100%;
+
+        .imgLeft{
+          width: 50%;
+          height: 38dvh;
+        }
+
+      }
+      .movieDataRight {
+        width: 96%;
+        
+        .movieDataRight1{
+          
+            .movieDataRight11{
+              
+            }
+            .movieDataRight22{
+              // height: 90dvh;
+              width: 100%;
+              
+              .type{
+                
+              }
+              .director{
+                
+              }
+              .casts{
+                
+              }
+              .voteAvg{
+                
+              }
+              .movieOverview{
+                
+              }
+          }
+        }
+      }
+    }
+  }
+  .middle {
+    height: 30dvh;
+
+    .middleIframe{
+      width:80%; 
+      height:30dvh;
+    }
+  }
+  .commentArea {
+    
+  }
+  .footer{
+    height: 110dvh;
+  }
+}
+
+.textTilte{
+  margin-top: 10dvh;
+  font-size: 2em;
+
+}
+.text{
+  font-size: 1.2em;
+  
+}
+.textall{
+  font-size: 0.9em;
+  margin-left: 0%;
+  width: 40%;
+}
+
+.typeH3{
+  width: 30%;
+}
+
+.textallcast{
+  
+}
+.textallx{
+  height: 12dvh;
+
+}
+
+.textallx2{
+  width: 80%;
+  font-size: 1em;
+  margin-top: 2dvh;
+
+  
+}
+
+.textHeader{
+  font-size: 1em;
+  margin-left: 1%;
+}
+
+
+.grid-container {
+  
+}
+
+.grid-item {
+  
+
+  
+  a{
+    .gridImg{
+      height: 30dvh;
+    }
+  }
+}
+
+.button{
+        min-width: 3%;
+        height: 5dvh;
+        font-size: 1em;
+        margin-top: 0dvh;
+    }
+
+    }
+
+
 </style>
