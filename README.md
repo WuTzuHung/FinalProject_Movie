@@ -1,6 +1,4 @@
-專案連結(プロジェクトのリンク)：https://65f3cf1e010193000843afdb--finalprojectmovie.netlify.app/
-
-發表的PPT報告(発表されたPPT報告)：[第三組-蔚藍幻想秀.pdf](https://github.com/WuTzuHung/FinalProject_Movie/files/14752277/-.pdf)
+專案連結(プロジェクトのリンク)：https://azure-fantasy-movies.zeabur.app/
 
 團體專案名稱：蔚藍幻想秀(Azure fantasy hour) - 電影購票平台
 
