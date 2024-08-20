@@ -544,7 +544,7 @@ export default {
 <template>
   <h1>上映中電影</h1>
   <div class="container">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in playPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row" >
@@ -581,7 +581,7 @@ export default {
   </div>
   <h1>近期上映電影</h1>
   <div class="container">
-    <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in comePerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
@@ -618,7 +618,7 @@ export default {
   </div>
   <h1>為你推薦</h1>
   <div class="container">
-    <div id="carouselExample2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="carouselExample2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in popularPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
@@ -661,7 +661,7 @@ export default {
     </button>
 </div>
 <div class="container4-2">
-    <div id="carouselExample3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="carouselExample3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in searchPerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
@@ -706,7 +706,7 @@ export default {
     </select>
   </div>
   <div class="container">
-    <div id="customCarousel4" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="customCarousel4" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
       <div class="carousel-inner">
         <div v-for="(itemsChunk, index) in typePerPage" :key="index" :class="['carousel-item', index === currentSlide ? 'active' : '']">
           <div class="row">
@@ -779,7 +779,7 @@ a {
 }
 
 h1 {
-  margin-top: 2.7dvh;
+  margin-top: 3.2dvh;
   // margin-bottom: 3dvh;
   text-align: center;
 }
@@ -808,8 +808,9 @@ span, button {
 }
 
 .card{
-  width: 75%;
+  width: 70%;
   margin: 2dvh 2dvh;
+  margin-right: 4%;
 
   .card-img-top{
     height: 55dvh;
@@ -886,7 +887,10 @@ span, button {
                           .aitem{
                             .card {
                               // width: 70%;
+                              margin-left: 1%;
+                              margin-right: 0%;
                                 .card-img-top {
+                                  
                                 }
                                 .card-body {
                                     .card-text {
@@ -941,7 +945,10 @@ span, button {
                           .aitem{
                             .card {
                               // width: 70%;
+                              margin-left: 1%;
+                              margin-right: 0%;
                                 .card-img-top {
+                                  
                                 }
                                 .card-body {
                                     .card-text {

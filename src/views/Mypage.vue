@@ -543,7 +543,7 @@ export default {
         </div>
       </div>
     </div>
-    <hr />
+    <hr class="hrLine2" />
     <!-- 預告片 -->
     <h1 class="textTilte">個人影評</h1>
     <p class="text" style="">{{ this.moviecomment }}</p>
@@ -699,7 +699,8 @@ span, button {
     width: 100%;
     // height: 90dvh;
     margin: 0 auto;
-    height: 125dvh;
+    min-height: 125dvh;
+    // margin-bottom: 1dvh;
     // padding-top: 20px;
 
     .toppet{
@@ -799,7 +800,7 @@ span, button {
   }
   .middle {
     width: 100%;
-    height: 90dvh;
+    min-height: 90dvh;
     // margin: 0 auto;
 
     .middleIframe{
@@ -819,6 +820,10 @@ span, button {
     height: 356dvh;
   }
 }
+
+// .hrLine2{
+//   margin-top: 1dvh;
+// }
 
 .textTilte{
   font-family:'jf-openhuninn-2.0';
@@ -998,19 +1003,23 @@ span, button {
   
 
   .header {
-    height: 165dvh;
+    // min-height: 150dvh;
 
     .toppet{
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       .textHeader{
         font-size: 1em;
-        min-width: 10%;
-        height: 15dvh;
-        line-height: 4dvh;
+        min-width: none;
+        width: 55%;
+        height: 17dvh;
+        line-height: 5dvh;
         margin: 0;
-        margin-top: 1dvh;
-        margin-left: 1.5%;
+        margin-top: 8dvh;
+        padding: 10px;
+        // margin-left: 1.5%;
          
 
         
@@ -1037,6 +1046,7 @@ span, button {
       flex-direction: column;
       .movieDataLeft {
         width: 100%;
+        margin-top: 9dvh;
 
         .imgLeft{
           width: 50%;
@@ -1047,13 +1057,14 @@ span, button {
       .movieDataRight {
         width: 96%;
         
+        
         .movieDataRight1{
-          
+          height: 85dvh;
             .movieDataRight11{
               
             }
             .movieDataRight22{
-              // height: 90dvh;
+              height: 85dvh;
               width: 100%;
               
               .type{
@@ -1077,7 +1088,7 @@ span, button {
     }
   }
   .middle {
-    height: 30dvh;
+    min-height: 30dvh;
 
     .middleIframe{
       width:80%; 
@@ -1089,7 +1100,7 @@ span, button {
     
   }
   .footer{
-    height: 110dvh;
+    height: 135dvh;
   }
 }
 
@@ -1116,7 +1127,7 @@ span, button {
   
 }
 .textallx{
-  height: 12dvh;
+  height: 13dvh;
 
 }
 
@@ -1144,7 +1155,7 @@ span, button {
   
   a{
     .gridImg{
-      height: 30dvh;
+      height: 25dvh;
     }
   }
 }
