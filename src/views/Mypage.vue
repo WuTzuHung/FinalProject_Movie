@@ -817,7 +817,7 @@ span, button {
     width: 100%;
     // height: 60dvh;
     margin: 0 auto;
-    height: 356dvh;
+    min-height: 200dvh;
   }
 }
 
@@ -890,6 +890,8 @@ span, button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1%;
+  margin-bottom: 7dvh;
+
 }
 
 .grid-item {
@@ -1100,7 +1102,7 @@ span, button {
     
   }
   .footer{
-    height: 135dvh;
+    min-height: 80dvh;
   }
 }
 
@@ -1146,6 +1148,7 @@ span, button {
 
 
 .grid-container {
+  margin-bottom: 4dvh;
   
 }
 
