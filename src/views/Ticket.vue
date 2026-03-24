@@ -381,44 +381,42 @@ export default {
   }
 
   .box-wrapper {
-    width: 98%;
-    display: flex;
-    color: white;
-    flex-wrap: wrap;
-    margin: 0;
-    text-align: center;
-    justify-content: center;
-    margin-left: 2%;
-    // border: 1px solid black;
+   width: 70%;
+  display: flex;
+  color: white;
+  flex-wrap: wrap;
+  margin: 0 auto;        // ← 置中
+  text-align: center;
+  justify-content: center;
 
     .post-box {
-      width: 300px;
-      height: 80vh;
-      margin-right: 35px;
-    // border: 1px solid black;
-    // border: 1px solid black;
+    width: 23%;       // ← 四欄，加上 gap 剛好填滿
+    margin-right: 0;  // ← 拿掉原本的 margin-right
+    margin-right: 1.5%;
+    margin-bottom: 2dvh;
+    height: auto;        // ← 拿掉固定高度
 
 
       .post {
-        width: 300px;
-        height: 60vh;
-        max-height: 60vh;
+       width: 100%;
+      height: auto;      // ← 拿掉固定高度
+      max-height: none;  // ← 拿掉
         
 
         img {
-          height: 100%;
-          width: 100%;
-          margin-right: 10px;
-          border-radius: 10px 10px 0 0;
-          object-fit: cover; // 保持圖片比例並填滿 img 區域
-          cursor: pointer;
+        height: auto;
+        width: 100%;
+        aspect-ratio: 2 / 3;    // ← 海報比例
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        cursor: pointer;
           
         }
 
         .title {
           font-size: 20pt;
-          width: 270px;
-          margin-left: 17px;
+          width: 100%;        // ← 固定 px 改成 100%
+          margin-left: 0;     // ← 拿掉 margin-left
           margin-top: 10px;
           
           // border: 1px solid black;
@@ -426,11 +424,12 @@ export default {
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
+          
         }
 
         .title1 {
-          width: 270px;
-          margin-left: 17px;
+         width: 100%;        // ← 同上
+         margin-left: 0;     // ← 同上
           color: rgb(158, 158, 158);
           text-align: center;
           text-overflow: ellipsis;
@@ -526,12 +525,14 @@ export default {
   }
 
   .box-wrapper {
-    width: 92%;
-    margin-left: 8%;
+    width: 100%;
+    margin-left: 0;
+    gap: 0;
     
 
     .post-box {
-      
+            width: 80%;     // ← 一欄，寬度自己調
+            margin-bottom: 16px;
 
 
       .post {

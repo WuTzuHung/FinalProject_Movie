@@ -808,15 +808,13 @@ span, button {
 }
 
 .card{
-  width: 70%;
-  margin: 2dvh 2dvh;
-  margin-right: 4%;
+ width: 60%;        // 改成 100%，讓 col-md-4 控制寬度
+  margin: 2dvh 0;     // 左右 margin 拿掉，避免溢出
 
-  .card-img-top{
-    height: 55dvh;
-    cursor: pointer;
-
-    
+  .card-img-top {
+    height: auto;           // 拿掉固定高度
+    aspect-ratio: 2 / 3;    // 用比例取代，海報通常是 2:3
+    object-fit: cover;      // 保持圖片比例不變形
   }
 
   .card-body{
@@ -941,12 +939,13 @@ span, button {
                     .row {
                       
                         .col-md-4 {
-                          
+                              width: 100%;   // 手機版一張佔滿整行
+                              padding: 0 8px;
                           .aitem{
                             .card {
                               // width: 70%;
-                              margin-left: 1%;
-                              margin-right: 0%;
+                              // margin-left: 1%;
+                              // margin-right: 0%;
                                 .card-img-top {
                                   
                                 }

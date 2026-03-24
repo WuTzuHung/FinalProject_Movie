@@ -84,6 +84,7 @@ export default{
         display:flex;
         text-align: center;
         justify-content: space-between;
+        align-items: center;
         min-width: 100%;
         height: 8dvh;
         background-color: #525f75;
@@ -115,10 +116,12 @@ export default{
 
         .a{
             // width: 35%;
+            width: auto;
             font-size: 1em;
-            margin-top: 2.5dvh;
-            margin-bottom: 1.5dvh;
+            // margin-top: 2.5dvh;
+            // margin-bottom: 1.5dvh;
             justify-content: space-between;
+            align-items: center;
             
             &:hover{
                 background-color: gainsboro;
