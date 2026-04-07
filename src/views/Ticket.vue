@@ -401,6 +401,9 @@ export default {
        width: 100%;
       height: auto;      // ← 拿掉固定高度
       max-height: none;  // ← 拿掉
+            border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden; /* 圖片圓角才會套用 */
         
 
         img {

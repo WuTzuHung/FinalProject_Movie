@@ -344,17 +344,18 @@ export default {
     </div>
     <hr />
     <!-- 預告片 -->
-    <div class="middle">
-      <!-- <h1>預告片</h1> -->
-      <!-- <video :src="this.trailerLink" controls></video> -->
-      <!-- <iframe :src="this.trailerLink" controls></iframe>-->
-      <iframe width="1100" height="630" :src="'https://www.youtube.com/embed/' + trailerLink" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <div class="video-wrapper">
+  <iframe 
+    :src="'https://www.youtube.com/embed/' + trailerLink"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
     <hr />
     <!-- 討論區 -->
     <h1 class="textTilte">個人影評</h1>
     <div class="comment">
-      <textarea class="text" v-model="this.commentText" name="" id="" cols="30" rows="10" style="resize: none;height: 300px;width: 80%; margin-bottom: 10px;" placeholder="這裡可撰寫你自己對這部電影的想法心得"></textarea>
+      <textarea class="text comment-box" v-model="this.commentText" name="" id="" cols="30" rows="10" style="resize: none;height: 300px;width: 80%; margin-bottom: 10px;" placeholder="這裡可撰寫你自己對這部電影的想法心得"></textarea>
     </div>
     <!-- <p class="text">我的電影清單（可以以電影海報的方式排列，像
       是裝飾自己房間的牆壁一樣，一頁可以放滿九張海報，
@@ -398,7 +399,7 @@ export default {
   background-color: white;
   // opacity: 0.8;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -467,7 +468,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 50px;
 }
 span, button {
-  margin: 10px 10px 10px 0;
+  margin: 5px 8px 5px 0;
 }
 .col-md-8 {
   width: 50vw;
@@ -506,144 +507,176 @@ span, button {
     margin-top: 10px;
   }
 }
+/* ====== 基本重置 ====== */
 .body {
-  width: 100vw;
-  height: 260vh;
-
-  .header {
-    width: 100vw;
-    height: 90vh;
-    margin: 0 auto;
-    height: 850px;
-    // padding-top: 20px;
-    .movieData {
-      display: flex;
-      .movieDataLeft {
-        width: 35%;
-        height: 90vh;
-        text-align: end;
-        align-items: end;
-        margin-right: 50px;
-      }
-      .movieDataRight {
-        width: 65%;
-        height: 90vh;
-        text-align: start;
-        align-items: start;
-        .movieDataRight1{
-          width: 100%;
-          height: 20vh;
-          display: flex;
-            .movieDataRight11{
-              width: 10%;
-              height: 40vh;
-              text-align: start;
-              align-items: start;
-            }
-            .movieDataRight22{
-              width: 90%;
-              height: 40vh;
-              text-align: start;
-              align-items: start;
-              .type{
-                display: flex;
-                margin-bottom: 10px;
-              }
-              .director{
-                display: flex;
-                margin-bottom: 10px;
-              }
-              .casts{
-                display: flex;
-                margin-bottom: 10px;
-              }
-              .voteAvg{
-                display: flex;
-                margin-bottom: 10px;
-              }
-              .movieOverview{
-                display: flex;
-                margin-bottom: 10px;
-              }
-          }
-        }
-      }
-    }
-  }
-  .middle {
-    width: 100vw;
-    height: 90vh;
-    // margin: 0 auto;
-  }
-  .footer{
-    width: 95vw;
-    height: 60vh;
-    margin: 0 auto;
-  }
+  width: 100%;
+  min-height: 100dvh;
 }
 
-.textTilte{
-  font-family:'jf-openhuninn-2.0';
-  font-size: 4em;
-  margin: 0 0 20px 0;
-}
-.text{
-  font-family:'jf-openhuninn-2.0';
-  font-size: 2em;
-  width: 80%;
-  margin: 0 auto 0 auto;
-}
-.textall{
-  font-family:'jf-openhuninn-2.0';
-  font-size: 1.5em;
-  margin: 0;
-}
-.textHeader{
-  font-family:'jf-openhuninn-2.0';
-  font-size: 2em;
-  margin: 0;
+/* ====== 上方：圖片 + 文字 ====== */
+.movieData {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  align-items: flex-start;
 }
 
+/* 左邊圖片 */
+.movieDataLeft {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.movieDataLeft img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  height: auto;
+}
+
+/* 右邊文字 */
+.movieDataRight {
+  flex: 2;
+}
+
+/* 內容排版 */
+.movieDataRight22 > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+
+/* ====== Grid（下面電影） ====== */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.grid-item img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 .grid-item {
-  /* Add your custom styles for each grid item here */
-}
-.comment{
-  
+  transition: 0.3s;
 }
 
-.textallx{
-  font-family:'jf-openhuninn-2.0';
-  font-size: 1.5em;
-  margin: 0;
-  overflow: auto;  /* 或者使用 overflow: scroll; */
-  max-height: 250px;  /* 设置最大高度，超出部分会产生滚动条 */
-  // white-space: nowrap;  /* 防止文本换行 */
+.grid-item:hover {
+  transform: translateY(-5px);
 }
 
+/* ====== 按鈕 ====== */
 .buttonX {
-    width: 14.2vw;
-    height: 5.9vh;
-    border: none;
-    background-color: rgb(127, 136, 180);
-    border-radius: 10px;
-    font-size: 1.5em;
-    font-family: 'jf-openhuninn-2.0';
-    margin-top: 2.5%;
-    transition: 0.4s;
-    line-height: 1em;
-    margin: 20px 20px 10px 20px;
-    color: rgb(0, 0, 0);
+  width: auto;
+  padding: 10px 20px;
+  border: none;
+  background-color: rgb(127, 136, 180);
+  border-radius: 10px;
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  margin: 20px;
+  transition: 0.3s;
+}
 
-    &:hover {
-        background-color: rgb(63, 85, 195);
-        color: rgb(255, 255, 255);
-        transform: scale(1.1, 1.1);
-    }
+.buttonX:hover {
+  background-color: rgb(63, 85, 195);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ====== 字體 RWD ====== */
+h1 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+.textHeader {
+  font-size: clamp(1rem, 2vw, 1.6rem);
+}
+
+.textall {
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+/* ===== YouTube ===== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* ===== 留言區 ===== */
+.comment {
+  display: flex;
+  justify-content: center;
+}
+
+.comment-box {
+  width: 80%;
+  max-width: 800px;
+  min-height: 150px;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+
+/* ====== 手機版 ====== */
+@media (max-width: 768px) {
+
+  .movieData {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movieDataLeft img {
+    max-width: 250px;
+  }
+
+  .movieDataRight {
+    width: 100%;
+  }
+
+  .textTilte {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .text {
+    width: 95%;
+    font-size: 1.2em;
+  }
+
+
+    .comment-box {
+    width: 95%;
+  }
+
+}
+
+/* ====== 小手機 ====== */
+@media (max-width: 480px) {
+  .movieDataLeft img {
+    max-width: 200px;
+  }
+
+  .textHeader {
+    font-size: 1rem;
+  }
+
+  .textall {
+    font-size: 0.9rem;
+  }
 }
 </style>

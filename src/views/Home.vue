@@ -810,6 +810,7 @@ span, button {
 .card{
  width: 60%;        // 改成 100%，讓 col-md-4 控制寬度
   margin: 2dvh 0;     // 左右 margin 拿掉，避免溢出
+  
 
   .card-img-top {
     height: auto;           // 拿掉固定高度
@@ -818,7 +819,7 @@ span, button {
   }
 
   .card-body{
-    min-height: 20dvh;
+    min-height: 10dvh;
 
     .card-text{
       margin-top: 1.3dvh;

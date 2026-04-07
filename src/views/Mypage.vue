@@ -514,32 +514,49 @@ export default {
           <h2 class="textHeader">上映日期：{{ this.movieInfo.movieReleasedate }}</h2>
           <hr />
           <h2>Movie Info</h2>
-          <div class="movieDataRight1">
-            <div class="movieDataRight22">
-              <div class="type">
-                <h3 class="textHeader typeH3">類型：</h3>
-                <span class="textall" style="" v-for="(item,index) in this.movieType" :key="index">{{ item }}<span v-if="index < this.movieType.length - 1" class="textall" style="font-size: 1em;">、</span></span><br>
-              </div>
-              <div class="director">
-                <h3 class="textHeader">導演：</h3>
-                <span class="textall" style="" v-for="(item, index) in this.directors" :key="index">{{ item.original_name }}<span v-if="index < this.directors.length - 1">,</span></span><br>
-              </div>
-              <div class="casts">
-                <h3 class="textHeader" style="">演員：</h3>
-                <div style="width: 50%;display: flex;">
-                  <p class="textall" style="" v-for="(item, index) in this.casts" :key="index">{{ item.original_name }}<span v-if="index < this.casts.length - 1" class="textall" style="font-size: 1em;">、</span></p><br></div>
-              </div>
-              <div class="voteAvg">
-                <h3 class="textHeader">評分：</h3>
-                <h2 class="textall" style="">{{ this.movieInfo.movieVoteavg }}</h2>
-              </div>
-              <div class="movieOverview">
-                <h3 class="textHeader" style="">簡介：</h3>
-                <p class="textallx2" v-if="this.movieInfo.movieOverview" style="">{{ this.movieInfo.movieOverview }}</p>
-                <p class="textall" v-else>此電影無簡介</p>
-              </div>
-            </div>
-          </div>
+          <div class="infoRow">
+  <h3 class="label">類型：</h3>
+  <div class="value">
+    <span v-for="(item,index) in movieType" :key="index">
+      {{ item }}<span v-if="index < movieType.length - 1">、</span>
+    </span>
+  </div>
+</div>
+
+<div class="infoRow">
+  <h3 class="label">導演：</h3>
+  <div class="value">
+    <span v-for="(item, index) in directors" :key="index">
+      {{ item.original_name }}<span v-if="index < directors.length - 1">、</span>
+    </span>
+  </div>
+</div>
+
+<div class="infoRow">
+  <h3 class="label">演員：</h3>
+  <div class="value">
+    <span v-for="(item, index) in casts" :key="index">
+      {{ item.original_name }}<span v-if="index < casts.length - 1">、</span>
+    </span>
+  </div>
+</div>
+
+<div class="infoRow">
+  <h3 class="label">評分：</h3>
+  <div class="value">
+    {{ movieInfo.movieVoteavg }}
+  </div>
+</div>
+
+<div class="infoRow">
+  <h3 class="label">簡介：</h3>
+  <div class="value">
+    <p v-if="movieInfo.movieOverview" class="overview">
+      {{ movieInfo.movieOverview }}
+    </p>
+    <p v-else>此電影無簡介</p>
+  </div>
+</div>
         </div>
       </div>
     </div>
@@ -552,7 +569,13 @@ export default {
       <!-- <video :src="this.trailerLink" controls></video> -->
       <!-- <iframe :src="this.trailerLink" controls></iframe>-->
       <!-- <div ref="youtubePlayer"></div> -->
-      <iframe class="middleIframe"  :src="'https://www.youtube.com/embed/' + trailerLink" frameborder="0" allowfullscreen></iframe>
+      <div class="video-wrapper">
+  <iframe 
+    :src="'https://www.youtube.com/embed/' + trailerLink"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
     </div>
     <!-- 討論區 -->
 
@@ -576,6 +599,43 @@ export default {
 </template>
 
 <style scoped lang="scss">
+
+* {
+  box-sizing: border-box;
+}
+
+.infoRow {
+  display: flex;
+  align-items: baseline;  // 關鍵！！！
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.label {
+  width: 90px;
+  flex-shrink: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.value {
+  flex: 1;
+  line-height: 1.6;
+}
+
+/* 演員自動換行但不亂 */
+.value {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 簡介 */
+.overview {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+}
+
 .loader {
   //又報錯
   background: linear-gradient(90deg, #b3fffd 0, #e3e6ff 50%, #fde5f5 100%);
@@ -693,57 +753,63 @@ span, button {
 }
 .body {
   width: 100%;
-  height: 260vh;
+  min-height: 100dvh;
 
   .header {
     width: 100%;
     // height: 90dvh;
     margin: 0 auto;
-    min-height: 125dvh;
+    min-height: 100dvh;
     // margin-bottom: 1dvh;
     // padding-top: 20px;
 
     .toppet{
-      width: 100%;
-      height: 12dvh;
-      display: flex;
-      margin-top: 2dvh;
+ width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;         /* 🔥 控間距 */
+  margin-top: 20px;
+  padding-left: 10%;
       .textHeader{
-        margin: 1% 4% 1% 1%; 
-        min-width: 30%; 
-        height: 8dvh;
-        background-color: rgb(176, 182, 213); 
-        border-radius: 20px;
-        line-height: 8dvh;
-        margin-left: 6%;
+   padding: 8px 20px 8px 12px;
+  background-color: rgb(176, 182, 213);
+  border-radius: 20px;
+
+  white-space: nowrap;   /* 🔥 不換行 */
+  flex-shrink: 0;        /* 🔥 不被壓縮 */
+
+  font-size: 1.2rem;     /* 控制大小 */
       }
 
       .searchaccount{
-        width: 100%;
-        display: flex;
+          display: flex;
+  gap: 10px;
+  align-items: center;
+
+  width: auto;        /* 🔥 重點 */
+  padding-left: 5%;
         .inputSearch{
-          height: 7dvh;
-          width: 20%;
-          margin: auto 0 auto 0; 
-          border-radius: 5px;
-          margin-left: 5.5%;
+  flex: 1;
+  max-width: 250px;
+  
         }
         .inputButton{
-          min-width: 25%; 
-          height: 7dvh;
-          margin: auto 0 auto 2%;
+          margin-left: 10px;
+white-space: nowrap;
         }
 
       }
     }
     .movieData {
       display: flex;
+      gap: 20px;
       .movieDataLeft {
         width: 42%;
 
         .imgLeft{
-          width: 80%;
-          height: 100dvh;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
           // margin-right: 13%;
           margin-top: 3dvh;
         }
@@ -791,7 +857,7 @@ span, button {
                 display: flex;
                 margin-bottom: 2dvh;
                 width: 90%;
-                height: 40dvh;
+                height: auto;
               }
           }
         }
@@ -803,11 +869,19 @@ span, button {
     min-height: 90dvh;
     // margin: 0 auto;
 
-    .middleIframe{
-      width:80%; 
-      height:90dvh;
-    }
   }
+
+  .video-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
   .commentArea {
     width: 95%;
     height: 30dvh;
@@ -817,7 +891,6 @@ span, button {
     width: 100%;
     // height: 60dvh;
     margin: 0 auto;
-    min-height: 200dvh;
   }
 }
 
@@ -841,7 +914,7 @@ span, button {
   font-family:'jf-openhuninn-2.0';
   font-size: 1.5em;
   margin: 0;
-  line-height: 5dvh;
+  line-height: 1.6;
   margin-top: 1dvh;
   // width: 80%;
 
@@ -860,7 +933,7 @@ span, button {
   // white-space: nowrap;  /* 防止文本换行 */
   // line-height: 5dvh;
   width: 85%;
-  height: 10dvh;
+  max-height: 200px;
   margin-top: 1dvh;
   margin-left: 6%;
   // margin-bottom: 5dvh;
@@ -888,26 +961,31 @@ span, button {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1%;
-  margin-bottom: 7dvh;
-
+  grid-template-columns: repeat(3, 1fr); /* 固定3欄 */
+  gap: 15px;
+  width: 100%;
 }
+
 
 .grid-item {
   /* Add your custom styles for each grid item here */
   // height: 120dvh;
   // height: 110dvh;
-
+width: 100%;
   
   a{
-    .gridImg{
-      width: 95%;
-      height: 100dvh;
-      // margin-right: 10%;
-      margin-left: 1%;
-      margin-right: 1%;
-    }
+    .grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridImg {
+  width: 100%;
+  max-width: 200px;   /* 🔥 控制大小 */
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
   }
 }
 
@@ -926,7 +1004,13 @@ span, button {
 
     @media (max-width: 767px){
 
+  .infoRow {
+    flex-direction: column;
+  }
 
+  .label {
+    width: 100%;
+  }
 
       .loader {
   
@@ -1016,8 +1100,8 @@ span, button {
         font-size: 1em;
         min-width: none;
         width: 55%;
-        height: 17dvh;
-        line-height: 5dvh;
+        
+        line-height: 1.4;
         margin: 0;
         margin-top: 8dvh;
         padding: 10px;
@@ -1030,34 +1114,58 @@ span, button {
       .searchaccount{
         margin-top: 2dvh;
         justify-content: center;
-        
+          display: flex;
+  align-items: center;
+  gap: 10px;
         .inputSearch{
           height: 5dvh;
-          width: 30%;
+            width: 100%;
+            max-width: 250px;
           margin-left: 4%;
         }
         .inputButton{
           // min-width: 5%; 
           // height: 4dvh;
+          
         }
 
       }
     }
     .movieData {
-      display: flex;
       flex-direction: column;
+    align-items: center;
       .movieDataLeft {
         width: 100%;
         margin-top: 9dvh;
 
         .imgLeft{
-          width: 50%;
-          height: 38dvh;
+        width: 60%;
+        max-width: 250px;
+        height: auto;
         }
 
       }
+.movieDataRight22 > div {
+  gap: 10px;
+    display: flex;
+  align-items: flex-start;
+}
+
+.movieDataRight22 h3 {
+  width: 90px;
+  flex-shrink: 0;
+  margin: 0;
+  line-height: 1.6;  // ⭐ 跟右邊一致
+}
+
+.movieDataRight22 span,
+.movieDataRight22 p {
+  margin: 0;
+  line-height: 1.6;
+}
+
       .movieDataRight {
-        width: 96%;
+        width: 100%;
         
         
         .movieDataRight1{
@@ -1066,8 +1174,7 @@ span, button {
               
             }
             .movieDataRight22{
-              height: 85dvh;
-              width: 100%;
+
               
               .type{
                 
@@ -1092,10 +1199,6 @@ span, button {
   .middle {
     min-height: 30dvh;
 
-    .middleIframe{
-      width:80%; 
-      height:30dvh;
-    }
   }
   .commentArea {
     
@@ -1116,6 +1219,7 @@ span, button {
   
 }
 .textall{
+  line-height: 1.6;
   font-size: 0.9em;
   margin-left: 0%;
   width: 40%;
@@ -1129,7 +1233,7 @@ span, button {
   
 }
 .textallx{
-  height: 13dvh;
+  max-height: 200px;
 
 }
 
@@ -1158,7 +1262,7 @@ span, button {
   
   a{
     .gridImg{
-      height: 25dvh;
+      height: auto;
     }
   }
 }
