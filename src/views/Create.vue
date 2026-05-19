@@ -1283,4 +1283,265 @@ span {
   /* 針對平板設備的樣式 */
   
 }
+.First {
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(28px, 5vw, 64px) var(--page-gutter);
+}
+
+.First .BlueBack {
+  width: min(100%, 520px);
+  height: auto;
+  min-height: 360px;
+  margin: 0;
+  padding: clamp(28px, 5vw, 48px);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(20, 28, 45, 0.28);
+}
+
+.First .BlueBack .BlueH1 {
+  margin-top: 0;
+  line-height: 1.35;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.First .BlueBack .BlueForm .BlueText,
+.First .BlueBack .BlueForm .BlueLabel {
+  width: 100%;
+  margin-left: 0;
+}
+
+.First .BlueBack .BlueForm .BlueButton {
+  min-width: 160px;
+  height: 48px;
+  margin-top: 28px;
+}
+
+.First2 {
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  padding: clamp(24px, 4vw, 48px) var(--page-gutter) clamp(56px, 7vw, 92px);
+  text-align: center;
+}
+
+.First2 > div:first-child {
+  width: min(100%, var(--page-max-width)) !important;
+  margin: 0 auto 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.First2 > div:first-child .lell,
+.First2 > div:first-child .rerr {
+  width: min(255px, 42vw) !important;
+  height: 170px !important;
+  margin: 0 !important;
+}
+
+.First2 > div:first-child > button {
+  margin: 0 !important;
+}
+
+.First2 .moviePosterAll {
+  width: min(100%, var(--page-max-width));
+  margin: clamp(22px, 3vw, 36px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 220px));
+  gap: clamp(26px, 3vw, 40px);
+  justify-content: center;
+  align-items: stretch;
+}
+
+.First2 .moviePosterAll > .card {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 16px 34px rgba(35, 44, 61, 0.14);
+}
+
+.First2 .moviePosterAll > .card::before {
+  display: none;
+}
+
+.First2 .moviePosterAll .box {
+  height: auto;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px 8px 0 0;
+}
+
+.First2 .moviePosterAll .box::before {
+  display: none;
+}
+
+.First2 .moviePosterAll .box:hover {
+  transform: translateY(-10px);
+}
+
+.First2 .moviePosterAll .card-img-top {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.First2 .moviePosterAll > .card .card-body {
+  height: auto !important;
+  min-height: 150px;
+  padding: 18px 12px 20px;
+  position: relative;
+}
+
+.First2 .moviePosterAll .card-title {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: 1.35;
+  min-height: 2.7em;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.First2 .moviePosterAll .GoShowText {
+  position: static;
+  width: 100%;
+  height: auto;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.First2 .moviePosterAll .GoShowText .goforarea {
+  width: auto;
+  min-width: 120px;
+  height: auto;
+  min-height: 42px;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.2;
+}
+
+.allbuttonshoulduseit {
+  width: auto;
+  min-width: 150px;
+  min-height: 46px;
+  padding: 8px 18px;
+}
+
+.First2 > .allbuttonshoulduseit {
+  margin-top: clamp(34px, 5vw, 56px);
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.bord {
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  height: auto;
+  padding-bottom: 56px;
+}
+
+.bord .CreateOoeName {
+  width: min(92%, 520px);
+  height: auto;
+  min-height: 330px;
+  margin: 20px auto;
+  padding: 0 18px 24px;
+}
+
+canvas {
+  width: min(763px, 94vw);
+  height: auto;
+  aspect-ratio: 763 / 450;
+}
+
+.navbar,
+.toolbar {
+  width: min(763px, 94vw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  height: auto;
+  min-height: 64px;
+  padding: 8px;
+  line-height: 1.2;
+}
+
+.navbar li {
+  margin: 4px 8px;
+  padding: 10px 14px;
+}
+
+.toolbar {
+  min-height: 76px;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+}
+
+.Second {
+  width: 100%;
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  height: auto;
+  padding: 32px var(--page-gutter) 56px;
+}
+
+.Second .ShowPoster {
+  width: min(903px, 100%);
+  height: auto;
+  aspect-ratio: 903 / 700;
+  margin: 24px auto 0;
+}
+
+.Second .ShowPoster .n-carousel {
+  width: 67.6% !important;
+  height: 51.4% !important;
+}
+
+@media (max-width: 767px) {
+  .First {
+    align-items: flex-start;
+    padding: 24px 14px 36px;
+  }
+
+  .First .BlueBack {
+    width: 100%;
+    min-height: 330px;
+  }
+
+  .First2 .moviePosterAll {
+    grid-template-columns: minmax(0, min(100%, 330px));
+    justify-content: center;
+  }
+
+  .First2 > div:first-child .lell,
+  .First2 > div:first-child .rerr {
+    display: none;
+  }
+
+  .navbar,
+  .toolbar {
+    width: 94vw;
+  }
+
+  .toolbar__color {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .Second .ShowPoster {
+    background-size: contain;
+  }
+}
 </style>

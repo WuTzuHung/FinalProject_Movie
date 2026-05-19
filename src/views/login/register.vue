@@ -375,4 +375,110 @@ export default {
   // height: 200%;
   margin-bottom: 4%;
 }
+.cBox {
+  width: 100%;
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  height: auto;
+  padding: clamp(24px, 4vw, 48px) 16px;
+  align-items: center;
+}
+
+.cBox .box {
+  width: min(100%, 560px);
+  height: auto;
+  padding: clamp(24px, 4vw, 42px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.cBox .box .textL,
+.cBox .box .tb,
+.cBox .box .tbp,
+.emailbox {
+  width: 100%;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cBox .box .textL {
+  margin-bottom: 8px;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+}
+
+.cBox .box .tbc {
+  margin-left: 0;
+}
+
+.cBox .box .eye {
+  top: 50%;
+  right: 18px;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.emailbox {
+  gap: 10px;
+  align-items: stretch;
+}
+
+.emailbox .tbq {
+  flex: 1 1 auto;
+  width: auto;
+  margin-right: 0;
+}
+
+.selectmailbox {
+  min-width: 145px;
+  margin-bottom: 1rem;
+}
+
+.cBox .box .logbox {
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonR,
+.buttonS {
+  width: auto;
+  min-width: 112px;
+  min-height: 46px;
+  height: auto;
+  margin: 0 !important;
+  padding: 8px 16px;
+}
+
+@media (max-width: 767px) {
+  .cBox {
+    padding: 20px 14px 32px;
+    align-items: flex-start;
+  }
+
+  .cBox .box {
+    padding: 24px 16px;
+  }
+
+  .emailbox {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .selectmailbox {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .cBox .box .logbox {
+    flex-direction: column;
+  }
+
+  .buttonR,
+  .buttonS,
+  .root {
+    width: 100%;
+  }
+}
 </style>

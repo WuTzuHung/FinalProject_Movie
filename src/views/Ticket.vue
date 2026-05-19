@@ -588,4 +588,111 @@ export default {
     }
 
 }
+.view {
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  padding: clamp(24px, 4vw, 48px) var(--page-gutter);
+}
+
+.view .wrapper {
+  gap: 8px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.view .wrapper button {
+  width: auto;
+  min-width: clamp(132px, 16vw, 190px);
+  min-height: 48px;
+  margin-top: 0;
+  padding: 0 20px;
+  border-radius: 999px;
+}
+
+.view .underline {
+  width: min(360px, 72vw);
+  margin: 12px auto clamp(28px, 5vw, 64px);
+}
+
+.view .box-wrapper {
+  width: min(100%, var(--page-max-width));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(18px, 2.4vw, 30px);
+  align-items: start;
+}
+
+.view .box-wrapper .post-box {
+  width: 100%;
+  margin: 0;
+}
+
+.view .box-wrapper .post-box .post {
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: white;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(35, 44, 61, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.view .box-wrapper .post-box .post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(35, 44, 61, 0.2);
+}
+
+.view .box-wrapper .post-box .post img {
+  display: block;
+  width: 100%;
+  height: clamp(285px, 29vw, 330px);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.view .box-wrapper .post-box .post .title {
+  padding: 12px 12px 4px;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.35;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: clamp(22px, 4vw, 40px);
+}
+
+.pagination button {
+  min-width: 42px;
+  min-height: 42px;
+  margin: 0 2px 10px;
+  border-radius: 999px;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+}
+
+@media (max-width: 767px) {
+  .view {
+    padding: 20px 14px 32px;
+  }
+
+  .view .wrapper {
+    flex-wrap: wrap;
+  }
+
+  .view .wrapper button {
+    width: auto;
+    min-width: 132px;
+  }
+
+  .view .box-wrapper {
+    grid-template-columns: minmax(0, min(100%, 330px));
+    justify-content: center;
+    width: 100%;
+  }
+
+  .view .box-wrapper .post-box .post img {
+    height: min(123vw, 495px);
+  }
+}
 </style>  

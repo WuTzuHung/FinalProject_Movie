@@ -78,46 +78,66 @@ export default{
 <style scoped lang="scss">
 
 .headerShow{
-    min-width: 100%;
-    height: 8dvh;
+    width: 100%;
+    min-height: var(--app-header-height, 72px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(82, 95, 117, 0.96);
+    box-shadow: 0 10px 24px rgba(25, 31, 43, 0.18);
+    backdrop-filter: blur(10px);
     .box{
         display:flex;
         text-align: center;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        min-width: 100%;
-        height: 8dvh;
-        background-color: #525f75;
+        gap: clamp(8px, 1.4vw, 24px);
+        width: min(100%, 1180px);
+        min-height: var(--app-header-height, 72px);
+        margin: 0 auto;
+        padding: 0 24px;
         .a{
             font-family: "jf-openhuninn-2.0";
-            width: 20%;
-            margin-left: 3%;
-            margin-right: 3%;
-            font-size: 2em;
+            width: auto;
+            min-width: max-content;
+            margin: 0;
+            padding: 10px clamp(10px, 1.4vw, 18px);
+            font-size: clamp(1rem, 1.45vw, 1.45rem);
+            line-height: 1.2;
             text-decoration: none;
             white-space:nowrap;
-            transition: 0.4s;
+            transition: 0.2s;
             color: whitesmoke;
-            border-radius: 5px;
+            border-radius: 999px;
+            cursor: pointer;
+            p {
+                margin: 0;
+            }
             &:hover{
-                background-color: gainsboro;
+                background-color: rgba(245, 245, 245, 0.92);
                 color:darkslategray;
-                transform:scale(1.1,1.1);
             }
         }
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 
     .headerShow{
         
     .box{
+        justify-content: flex-start;
+        overflow-x: auto;
+        scrollbar-width: none;
+        padding: 0 14px;
 
         .a{
             // width: 35%;
+            flex: 0 0 auto;
             width: auto;
             font-size: 1em;
+            padding: 9px 12px;
             // margin-top: 2.5dvh;
             // margin-bottom: 1.5dvh;
             justify-content: space-between;
@@ -132,6 +152,19 @@ export default{
         }
     }
 }
+}
+
+@media (max-width: 575px) {
+    .headerShow {
+        .box {
+            min-height: var(--app-header-height, 64px);
+
+            .a {
+                font-size: 0.92rem;
+                padding: 8px 10px;
+            }
+        }
+    }
 }
 
 </style>

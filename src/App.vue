@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import Header from './components/Header.vue';
 </script>
 
-<template class="body">
+<template>
   <div class="total">
     <div class="header">
       <Header />
@@ -16,16 +16,18 @@ import Header from './components/Header.vue';
 
 <style scoped lang="scss">
 .total{
-  height: 8dvh;
   width: 100%;
+  min-height: 100dvh;
+
   .header {
-  height: 8dvh;
-  width: 100%;
-}
+    width: 100%;
+  }
+
   .content{
-  width: 100%;
-  height: 92dvh;
-  text-align: center;
+    width: 100%;
+    min-height: calc(100dvh - var(--app-header-height, 72px));
+    padding-top: var(--app-header-height, 72px);
+    text-align: center;
   }
 }
 

@@ -27,7 +27,218 @@
     box-sizing: border-box;
     }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --app-header-height: 72px;
+    --page-max-width: 1180px;
+    --page-gutter: clamp(16px, 4vw, 48px);
+    --surface: #ffffff;
+    --surface-muted: #f5f7fb;
+    --brand: #525f75;
+    --brand-soft: #d1d8e3;
+    --text-strong: #202431;
+    --text-muted: #5f6675;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background: #f7f8fb;
+}
+
+body,
+#app {
+    width: 100%;
+}
+
 *{
     font-family: 'jf-openhuninn-2.0';
     margin: 0;
+}
+
+img,
+iframe,
+canvas,
+video {
+    max-width: 100%;
+}
+
+button,
+a,
+select,
+input,
+textarea {
+    touch-action: manipulation;
+}
+
+button,
+.btn {
+    min-height: 42px;
+    border-radius: 8px;
+}
+
+.form-control,
+select,
+textarea {
+    max-width: 100%;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-img-top,
+img[class*="poster"],
+img[class*="Poster"] {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.card:has(img),
+.post,
+.grid-item a,
+.moviePosterAll .box,
+.movieDataLeft a {
+    position: relative;
+}
+
+.card:has(img)::before,
+.post::before,
+.grid-item a::before,
+.moviePosterAll .box::before,
+.movieDataLeft a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    z-index: 2;
+    width: 70%;
+    height: 100%;
+    pointer-events: none;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0));
+    transform: skew(-30deg);
+    transition: left 0.85s ease, transform 0.85s ease;
+}
+
+.card:has(img):hover::before,
+.post:hover::before,
+.grid-item a:hover::before,
+.moviePosterAll .box:hover::before,
+.movieDataLeft a:hover::before {
+    left: 130%;
+    transform: skew(-30deg) scaleX(1.8);
+}
+
+.grid-item a,
+.movieDataLeft a {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.view,
+.cBox,
+.body,
+.top,
+.First,
+.First2,
+.movieSeat {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.view table,
+.tablebox,
+.columBox {
+    max-width: 100%;
+}
+
+.view table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+.view .check,
+.createMovieInfo,
+.upbox {
+    max-width: min(100%, var(--page-max-width));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.view .check,
+.upbox {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.view .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.top .post img,
+.imgLeft,
+.gridImg {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+@media (max-width: 575px) {
+    :root {
+        --app-header-height: 64px;
+        --page-gutter: 14px;
+    }
+
+    button,
+    .btn {
+        min-height: 40px;
+    }
+
+    .view,
+    .cBox,
+    .body,
+    .top,
+    .First,
+    .First2,
+    .movieSeat {
+        width: 100%;
+    }
+
+    .view .check,
+    .createMovieInfo,
+    .upbox {
+        width: 100% !important;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .view input,
+    .view select,
+    .view button,
+    .createMovieInfo input,
+    .createMovieInfo select,
+    .createMovieInfo button {
+        max-width: 100%;
+    }
+
+    .modal-dialog {
+        max-width: calc(100vw - 24px);
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

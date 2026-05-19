@@ -516,4 +516,81 @@ export default {
   // white-space: nowrap;  /* 防止文本换行 */
 }
 
+.cBox {
+  width: 100%;
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  height: auto;
+  padding: clamp(24px, 4vw, 48px) 16px;
+  align-items: center;
+}
+
+.cBox .box {
+  width: min(100%, 560px);
+  height: auto;
+  min-height: auto;
+  padding: clamp(24px, 4vw, 42px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.cBox .box .centerbox {
+  height: auto;
+  min-height: 0;
+}
+
+.cBox .box .textT {
+  margin: 0 0 24px;
+  line-height: 1.25;
+}
+
+.cBox .box .textL,
+.cBox .box .textL2 {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  margin-left: 0;
+  word-break: break-word;
+}
+
+.cBox .box .textL2 {
+  margin-left: clamp(12px, 4vw, 42px);
+  margin-bottom: 14px;
+}
+
+.cBox .box .logbox {
+  width: 100%;
+  height: auto;
+}
+
+.cBox .box .logbox .button {
+  width: auto;
+  min-width: 140px;
+  min-height: 46px;
+  height: auto;
+  padding: 8px 18px;
+}
+
+.modal-dialog {
+  max-width: min(92vw, 520px);
+}
+
+.modal-body .tb {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .cBox {
+    align-items: flex-start;
+    padding: 20px 14px 32px;
+  }
+
+  .cBox .box {
+    padding: 24px 16px;
+  }
+
+  .cBox .box .textL2 {
+    margin-left: 0;
+  }
+
+  .cBox .box .logbox .button {
+    width: 100%;
+  }
+}
 </style>

@@ -1277,4 +1277,110 @@ span, button {
     }
 
 
+.body {
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  overflow-x: hidden;
+}
+
+.body .header {
+  width: min(100%, var(--page-max-width));
+  min-height: auto;
+  padding: clamp(22px, 4vw, 48px) var(--page-gutter);
+}
+
+.body .header .toppet {
+  width: 100%;
+  padding-left: 0;
+  margin-top: 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.body .header .toppet .searchaccount {
+  padding-left: 0;
+  flex-wrap: wrap;
+}
+
+.body .header .movieData {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 56px);
+  align-items: start;
+}
+
+.body .header .movieData .movieDataLeft,
+.body .header .movieData .movieDataRight {
+  width: 100%;
+  margin: 0;
+}
+
+.body .header .movieData .movieDataLeft .imgLeft {
+  width: min(100%, 340px);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  margin-top: 0;
+  border-radius: 8px;
+  box-shadow: 0 18px 38px rgba(32, 38, 55, 0.18);
+}
+
+.video-wrapper {
+  padding: 0 var(--page-gutter);
+}
+
+.footer {
+  padding: 0 var(--page-gutter) 48px;
+}
+
+.grid-container {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.grid-item a .gridImg,
+.gridImg {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .body .header .toppet {
+    gap: 14px;
+  }
+
+  .body .header .toppet .textHeader {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .body .header .toppet .searchaccount {
+    width: 100%;
+  }
+
+  .body .header .toppet .searchaccount .inputSearch,
+  .body .header .toppet .searchaccount .inputButton {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .body .header .movieData {
+    grid-template-columns: 1fr;
+  }
+
+  .body .header .movieData .movieDataLeft {
+    margin-top: 0;
+  }
+
+  .body .header .movieData .movieDataLeft .imgLeft {
+    width: min(76vw, 280px);
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
 </style>

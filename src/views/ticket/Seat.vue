@@ -319,4 +319,89 @@ export default {
         }
     }
 }
+.movieSeat {
+    width: 100%;
+    min-height: calc(100dvh - var(--app-header-height, 72px));
+    height: auto;
+    align-items: stretch;
+    overflow-x: hidden;
+}
+
+.movieSeat .seat {
+    flex: 1 1 680px;
+    width: auto;
+    min-width: 0;
+    height: auto;
+    min-height: 620px;
+    padding: clamp(20px, 4vw, 44px) var(--page-gutter);
+}
+
+.movieSeat .seat .screen {
+    width: 100%;
+}
+
+.movieSeat .seat .screen .movieScreen,
+.movieSeat .seat .screen .movieScreen .circle {
+    width: min(100%, 760px);
+}
+
+.movieSeat .seat .postion {
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+
+.picCheckbox {
+    width: clamp(28px, 4vw, 40px);
+    height: clamp(28px, 4vw, 40px);
+}
+
+.movieSeat .seat .postion .choseSeat .col-label,
+.movieSeat .seat .postion .rowTitle ol {
+    width: clamp(30px, 4.4vw, 42px);
+    height: clamp(30px, 4.4vw, 42px);
+}
+
+.movieSeat .ticketInfo {
+    flex: 0 1 360px;
+    width: auto;
+    height: auto;
+    min-height: 100%;
+    padding: clamp(22px, 4vw, 44px) 22px;
+    background: #f5f7fb;
+}
+
+.movieSeat .ticketInfo ul {
+    padding-left: 0;
+}
+
+.movieSeat .ticketInfo li {
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    margin-bottom: 16px;
+    word-break: break-word;
+}
+
+.movieSeat .ticketInfo button {
+    min-width: 110px;
+    min-height: 44px;
+    border: 0;
+    padding: 8px 14px;
+}
+
+@media (max-width: 900px) {
+    .movieSeat {
+        flex-direction: column;
+    }
+
+    .movieSeat .seat {
+        border-right: 0;
+        border-bottom: 2px solid #d7dce6;
+        min-height: auto;
+    }
+
+    .movieSeat .ticketInfo {
+        width: 100%;
+        min-height: auto;
+    }
+}
 </style>

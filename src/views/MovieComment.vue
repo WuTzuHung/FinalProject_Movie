@@ -1153,4 +1153,144 @@ span, button {
 .FontB{
   font-family:'jf-openhuninn-2.0'; 
 }
+.body {
+  width: 100%;
+  height: auto;
+  min-height: calc(100dvh - var(--app-header-height, 72px));
+  overflow-x: hidden;
+}
+
+.body .header {
+  width: min(100%, var(--page-max-width));
+  min-height: auto;
+  height: auto;
+  padding: clamp(24px, 4vw, 48px) var(--page-gutter);
+}
+
+.body .header .movieData {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 56px);
+  align-items: start;
+}
+
+.body .header .movieData .movieDataLeft,
+.body .header .movieData .movieDataRight {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.body .header .movieData .movieDataLeft {
+  text-align: center;
+}
+
+.body .header .movieData .movieDataLeft img {
+  width: min(100%, 340px);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 18px 38px rgba(32, 38, 55, 0.18);
+}
+
+.body .middleInfo .trailer {
+  width: min(100%, 1100px);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+.body .middleInfo .trailer iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 8px;
+}
+
+.body .middleInfo .middle,
+.body .middleInfo .down {
+  width: 100%;
+}
+
+.body .middle1 {
+  width: min(100%, var(--page-max-width));
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 40px) var(--page-gutter);
+}
+
+.body .middle1 .selectButton,
+.body .middle1 .selectDate {
+  width: 100%;
+}
+
+.body .middle1 .selectButton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.body .middle1 .selectButton button {
+  width: auto;
+  min-width: 150px;
+  min-height: 44px;
+  margin: 0 0 12px;
+  padding: 8px 14px;
+}
+
+.body .middle1 .selectDate {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ShowPoster {
+  padding: 0 var(--page-gutter);
+}
+
+.ShowPoster .n-carousel {
+  width: min(763px, 94vw) !important;
+  height: auto !important;
+  aspect-ratio: 763 / 450;
+}
+
+.footer .row {
+  width: 100%;
+  margin: 0;
+}
+
+.footer .col-md-8 {
+  width: min(100%, 860px);
+  padding: 0 var(--page-gutter);
+}
+
+@media (max-width: 767px) {
+  .body .header {
+    padding: 22px 14px 32px;
+  }
+
+  .body .header .movieData {
+    grid-template-columns: 1fr;
+  }
+
+  .body .header .movieData .movieDataRight {
+    text-align: left;
+  }
+
+  .body .middleInfo .middle .mid,
+  .body .middleInfo .down .turn {
+    margin-left: 14px;
+    padding: 0 1em;
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+  }
+
+  .body .middle1 .selectDate {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .body .middle1 .selectButton button {
+    width: 100%;
+  }
+}
 </style>

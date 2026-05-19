@@ -189,7 +189,7 @@ export default {
             <div class="logbox" >
               <button type="button" class="button" @click="register">註冊帳號</button>
               <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#additem">忘記帳號</button>
-              <Popper arrow placement="top" class="root" style="margin-top: 0dvh;" :content="this.b">
+              <Popper arrow placement="top" class="root login-popper" :offsetDistance="0" :content="this.b">
                   <button type="button" class="buttonA" @click="log()">登入</button>
               </Popper>
             </div>
@@ -236,185 +236,263 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.cBox{
+.cBox {
   width: 100%;
-  height: 92dvh;
+  min-height: 92dvh;
+  padding: clamp(24px, 4vw, 48px) 16px;
   text-align: center;
   display: flex;
-  justify-content: center;
-  background-image: url(../../picture/Movie.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  .box{
-    width: 35%;
-    height: 70dvh;
-  // margin-top: 2%;
-  align-self: center;
   align-items: center;
-  background-color: #525f75;
-  border-radius: 15px;
-  .textT{
-    font-family:'jf-openhuninn-2.0';
-    font-size: 2em;
-    margin-top: 5dvh;
-    color: white;
-  }
-  .textL{
-    font-family:'jf-openhuninn-2.0';
-    font-size: 1.5em;
-    text-align: start;
-    margin-left: 12%;
-    color: white;
-  }
-  .tb{
-    width: 80%;
-    margin: 0 auto;
-  }
-  .tbp{
-    width: 80%;
-    margin: 0 auto;
-    position: relative;
-  }
-  .eye{
-    position: absolute;
-    bottom: 3.5dvh;
-    right: 14%;
-    transition: 0.3s;
-    &:hover{
-      color: rgb(255, 173, 65);
+  justify-content: center;
+  background-image: linear-gradient(rgba(14, 20, 32, 0.35), rgba(14, 20, 32, 0.45)), url(../../picture/Movie.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .box {
+    width: min(100%, 520px);
+    min-height: auto;
+    padding: clamp(28px, 4vw, 44px) clamp(20px, 4vw, 42px);
+    align-self: center;
+    align-items: center;
+    background-color: rgba(82, 95, 117, 0.94);
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    .textT {
+      font-family: 'jf-openhuninn-2.0';
+      font-size: clamp(1.7rem, 2.3vw, 2.25rem);
+      margin: 0 0 28px;
+      color: white;
     }
-  }
-  .tbc{
-    font-family:'jf-openhuninn-2.0';
-    font-size: 1em;
-    margin-left: 10%;
-  }
-  .checkbox{
-    align-items: start;
-    display: flex;
-    margin-left: 10%;
-    .leftC{
-    margin-top: 1.5%;
-  }
-  .textC{
-    margin-left: 1.2%;
-    color: white;
-  }
-  }
-  .logbox{
-    margin: 0 auto;
-    margin-top: 1dvh;
-    display: flex;
-    height: 15%;
-    width: 90%;
-    // justify-content: space-between;
-    .button{
-        min-width: 25%;
-        height: 5.9dvh;
-        border: none;
-        background-color: rgb(176, 182, 213);
-        border-radius: 10px;
-        font-size: 1.5em;
-        font-family:'jf-openhuninn-2.0';
-        margin-top: 2.5%;
-        margin-right: 6%;
-        margin-left: 5%;
+
+    .textL {
+      font-family: 'jf-openhuninn-2.0';
+      font-size: clamp(1.1rem, 1.45vw, 1.35rem);
+      text-align: start;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 8px;
+      color: white;
     }
-  }
-}
-}
 
-.root {
-  min-width: 20%;
-    --popper-theme-background-color: #333333;
-    --popper-theme-background-color-hover: #333333;
-    --popper-theme-text-color: #ffffff;
-    --popper-theme-border-width: 0px;
-    --popper-theme-border-style: solid;
-    --popper-theme-border-radius: 6px;
-    --popper-theme-padding: 32px;
-    --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
-    margin: 0;
-    .buttonA{
-      min-width: 100%;
-        height: 5.9dvh;
-        border: none;
-        background-color: rgb(176, 182, 213);
-        border-radius: 10px;
-        font-size: 1.5em;
-        font-family:'jf-openhuninn-2.0';
-        margin-left: 50%;
+    .form-floating {
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
     }
-  }
 
-  @media (max-width: 767px) {
-
-
-    .cBox{
-      
-
-      .box{
-        width: 80%;
-        height: 65dvh;
-        // margin-top: 5dvh;
-        margin-bottom: 12dvh;
-
-        .textT{
-          font-size: 1.5em;
-        }
-
-        .textL{
-    font-size: 1.2em;
-  }
-  .tb{
-
-  }
-  .tbp{
-
-  }
-  .eye{
-
-    &:hover{
-
+    .tb,
+    .tbp {
+      width: 100%;
+      min-height: 54px;
+      margin: 0 auto;
+      padding-right: 48px;
     }
-  }
-  .tbc{
 
-  }
-  .checkbox{
+    .eye {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      z-index: 5;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: 0.3s;
 
-    .leftC{
-
-  }
-  .textC{
-
-  }
-  }
-  .logbox{
-    justify-content: space-between;
-
-
-    .button{
-      min-width: 30%;
-      font-size: 1.1em;
-      margin-right: 7%;
-        margin-left: 0%;
-        margin-top: 1.5dvh;
-    }
-  }
+      &:hover {
+        color: rgb(255, 173, 65);
       }
     }
 
+    .tbc {
+      font-family: 'jf-openhuninn-2.0';
+      font-size: 1rem;
+      margin-left: 0;
+      max-width: calc(100% - 24px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
+    .checkbox {
+      width: 100%;
+      max-width: 400px;
+      margin: 4px auto 18px;
+      align-items: center;
+      display: flex;
+      gap: 8px;
+      text-align: left;
 
-    .root {
-      min-width: 30%;
+      .leftC {
+        flex: 0 0 auto;
+        margin: 0;
+      }
 
-    .buttonA{
-      font-size: 1.1em;
-      margin-left: 0%;
+      .textC {
+        margin: 0;
+        color: white;
+        font-size: 0.98rem;
+      }
+    }
+
+    .logbox {
+      width: 100%;
+      max-width: 420px;
+      margin: 6px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      align-items: stretch;
+
+      .button,
+      .buttonA {
+        width: 100%;
+        height: 48px;
+        min-height: 48px;
+        border: none;
+        background-color: rgb(176, 182, 213);
+        border-radius: 10px;
+        font-size: clamp(1rem, 1.4vw, 1.25rem);
+        font-family: 'jf-openhuninn-2.0';
+        line-height: 1.2;
+        padding: 8px 10px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: rgb(198, 203, 229);
+        }
+      }
+    }
+  }
+}
+
+.root {
+  width: 100%;
+  min-width: 0;
+  --popper-theme-background-color: #333333;
+  --popper-theme-background-color-hover: #333333;
+  --popper-theme-text-color: #ffffff;
+  --popper-theme-border-width: 0px;
+  --popper-theme-border-style: solid;
+  --popper-theme-border-radius: 6px;
+  --popper-theme-padding: 18px;
+  --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+
+:global(.login-popper.inline-block) {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+}
+
+.login-popper :deep(> div:first-child) {
+  width: 100%;
+}
+
+.login-popper :deep(.buttonA) {
+  width: 100%;
+}
+
+.modal-dialog {
+  max-width: min(92vw, 520px);
+}
+
+.modal-body {
+  .form-floating,
+  .tb {
+    width: 100%;
+  }
+}
+
+.textall {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .cBox {
+    .box {
+      width: min(100%, 460px);
+
+      .logbox {
+        grid-template-columns: 1fr;
+
+        > .button,
+        > .login-popper {
+          width: 100%;
+          max-width: 100%;
+          justify-self: stretch;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .cBox {
+    min-height: 92dvh;
+    padding: 20px 14px 32px;
+    align-items: flex-start;
+
+    .box {
+      width: 100%;
+      padding: 24px 16px;
+      margin: 0;
+      border-radius: 12px;
+
+      .textT {
+        font-size: 1.55rem;
+        margin-bottom: 22px;
+      }
+
+      .textL {
+        font-size: 1.05rem;
+      }
+
+      .tb,
+      .tbp {
+        min-height: 52px;
+      }
+
+      .tbc {
+        font-size: 0.92rem;
+      }
+
+      .checkbox {
+        margin-bottom: 16px;
+
+        .textC {
+          font-size: 0.92rem;
+        }
+      }
+
+      .logbox {
+        gap: 10px;
+
+        .button,
+        .buttonA {
+          width: 100%;
+          height: 46px;
+          min-height: 46px;
+          font-size: 1rem;
+        }
+      }
     }
   }
 
+  .root {
+    .buttonA {
+      height: 46px;
+      min-height: 46px;
+      font-size: 1rem;
+    }
+  }
 }
 </style>
