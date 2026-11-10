@@ -1,4 +1,4 @@
-專案連結(プロジェクトのリンク)：https://azure-fantasy-movies.zeabur.app/
+專案連結(プロジェクトのリンク)：https://finalprojectmovie.netlify.app/
 
 團體專案名稱：蔚藍幻想秀(Azure fantasy hour) - 電影購票平台
 
